@@ -15,19 +15,43 @@
        drop 
        foreign key FK_6cyha9f1wpj0dpbxrrjddrqed;
 
+    alter table `customization_parameters_spam_words` 
+       drop 
+       foreign key `FKhcqquyqtys40tece78apjsbyt`;
+
     alter table `provider` 
        drop 
        foreign key FK_b1gwnjqm6ggy9yuiqm0o4rlmd;
 
     drop table if exists `administrator`;
 
+    drop table if exists `announcement`;
+
     drop table if exists `anonymous`;
 
     drop table if exists `authenticated`;
 
+    drop table if exists `challenge`;
+
+    drop table if exists `commercial_banner`;
+
     drop table if exists `consumer`;
 
+    drop table if exists `customization_parameters`;
+
+    drop table if exists `customization_parameters_spam_words`;
+
+    drop table if exists `investor_record`;
+
+    drop table if exists `non_commercial_banner`;
+
+    drop table if exists `offer`;
+
     drop table if exists `provider`;
+
+    drop table if exists `records`;
+
+    drop table if exists `request`;
 
     drop table if exists `user_account`;
 

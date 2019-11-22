@@ -18,22 +18,55 @@
 
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
+		<%-- COLOCAR EN ESTE MENU TODO LO QUE PUEDA VER UN USUARIO ANONIMO --%>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.google.com/"/>
+			<acme:menu-suboption code="master.menu.anonymous.announcement" action="/anonymous/announcement/list"/>    
+			<acme:menu-suboption code="master.menu.anonymous.records" action="/anonymous/records/list"/>
+			<acme:menu-suboption code="master.menu.anonymous.starsCR" action="/anonymous/starsCR/list"/>
+			<acme:menu-suboption code="master.menu.anonymous.investorRecord" action="/anonymous/investor-record/list"/>
+			<acme:menu-suboption code="master.menu.anonymous.investorRecordStars" action="/anonymous/investor-recordStars/list"/>
 		</acme:menu-option>
 
+		<%-- COLOCAR EN ESTE MENU TODO LO QUE PUEDA VER UN ADMINISTRADOR --%>
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
+			<acme:menu-suboption code="master.menu.administrator.announcement.create" action="/administrator/announcement/create"/>
+			<acme:menu-suboption code="master.menu.administrator.announcement" action="/administrator/announcement/list"/>
+			<acme:menu-suboption code="master.menu.administrator.challenge.create" action="/administrator/challenge/create"/>
+			<acme:menu-suboption code="master.menu.administrator.challenge" action="/administrator/challenge/list"/>
+			<acme:menu-suboption code="master.menu.administrator.records.create" action="/administrator/records/create"/>
+			<acme:menu-suboption code="master.menu.administrator.records" action="/administrator/records/list"/>
+			<acme:menu-suboption code="master.menu.administrator.commercialBanner.create" action="/administrator/commercial-banner/create"/>
+			<acme:menu-suboption code="master.menu.administrator.commercialBanner" action="/administrator/commercial-banner/list"/>
+			<acme:menu-suboption code="master.menu.administrator.nonCommercialBanner.create" action="/administrator/non-commercial-banner/create"/>
+			<acme:menu-suboption code="master.menu.administrator.nonCommercialBanner" action="/administrator/non-commercial-banner/list"/>
+			<acme:menu-suboption code="master.menu.administrator.customizationParameters.create" action="/administrator/customization-parameters/create"/>
+			<acme:menu-suboption code="master.menu.administrator.customizationParameters" action="/administrator/customization-parameters/show"/>
+			<acme:menu-suboption code="master.menu.administrator.investorRecord.create" action="/administrator/investor-record/create"/>
+			<acme:menu-suboption code="master.menu.administrator.investorRecord" action="/administrator/investor-record/list"/>
+			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/show-data"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shutdown" action="/master/shutdown"/>
 		</acme:menu-option>
-
+		<%-- COLOCAR EN ESTE MENU TODO LO QUE PUEDA VER UN PROVIDER --%>
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
 			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>
+			<acme:menu-suboption code="master.menu.provider.request.create" action="/provider/request/create"/>
 		</acme:menu-option>
-
+		<%-- COLOCAR EN ESTE MENU TODO LO QUE PUEDA VER UN CONSUMER --%>
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
+			<acme:menu-suboption code="master.menu.consumer.offer.create" action="/consumer/offer/create"/>
+		</acme:menu-option>
+		<%-- COLOCAR EN ESTE MENU TODO LO QUE PUEDA VER UN USUARIO AUTENTIFICADO --%>
+		<acme:menu-option code="master.menu.isAutentificated" access="isAuthenticated()">
+			<acme:menu-suboption code="master.menu.user-account.announcement" action="/authenticated/announcement/list"/>
+			<acme:menu-suboption code="master.menu.user-account.offer" action="/authenticated/offer/list"/>
+      <acme:menu-suboption code="master.menu.authenticated.challenges" action="/authenticated/challenge/list"/>
+			<acme:menu-suboption code="master.menu.user-account.records" action="/authenticated/records/list"/>
+			<acme:menu-suboption code="master.menu.user-account.investorRecord" action="/authenticated/investor-record/list"/>
+			<acme:menu-suboption code="master.menu.user-account.request" action="/authenticated/request/list"/>
 		</acme:menu-option>
 	</acme:menu-left>
 
@@ -52,4 +85,3 @@
 		<acme:menu-option code="master.menu.sign-out" action="/master/sign-out" access="isAuthenticated()"/>
 	</acme:menu-right>
 </acme:menu-bar>
-

@@ -19,9 +19,33 @@
        drop 
        foreign key `FKhcqquyqtys40tece78apjsbyt`;
 
+    alter table `message` 
+       drop 
+       foreign key `FKik4epe9dp5q6uenarfyia7xin`;
+
+    alter table `message_thread_message` 
+       drop 
+       foreign key `FKka0a2jm3m6obl7wa6586cqyp4`;
+
+    alter table `message_thread_message` 
+       drop 
+       foreign key `FKp1bkunf5gyu1vtt1q3f2djagy`;
+
+    alter table `message_tags` 
+       drop 
+       foreign key `FKk6j00y1eiyu6qe5gad8rvefed`;
+
     alter table `provider` 
        drop 
        foreign key FK_b1gwnjqm6ggy9yuiqm0o4rlmd;
+
+    alter table `user_involved` 
+       drop 
+       foreign key `FKevpise8r0ofnf4xpw18mkgesw`;
+
+    alter table `user_involved` 
+       drop 
+       foreign key `FKn5kf90daeyb1rcq0soeax5tx3`;
 
     drop table if exists `administrator`;
 
@@ -43,6 +67,14 @@
 
     drop table if exists `investor_record`;
 
+    drop table if exists `message`;
+
+    drop table if exists `message_thread`;
+
+    drop table if exists `message_thread_message`;
+
+    drop table if exists `message_tags`;
+
     drop table if exists `non_commercial_banner`;
 
     drop table if exists `offer`;
@@ -54,5 +86,7 @@
     drop table if exists `request`;
 
     drop table if exists `user_account`;
+
+    drop table if exists `user_involved`;
 
     drop table if exists `hibernate_sequence`;

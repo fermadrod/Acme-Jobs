@@ -16,6 +16,34 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<import resource="conversion-service.xml" />
+	<!-- Administrators -->
+	
+	<bean name="administratorUserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="administrator" />
+		<property name="password" value="administrator" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Administrator" />
+				<property name="surname" value="Acme.com" />
+				<property name="email" value="administrator@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="administratorAdministrator" />
+				<ref bean="administratorAuthenticated" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="administratorAdministrator" class="acme.framework.entities.Administrator">
+		<property name="userAccount" ref="administratorUserAccount" />
+	</bean>
+	
+	<bean name="administratorAuthenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="administratorUserAccount" />
+	</bean>
 	<!-- ANNOUNCEMENTS -->
 	<bean id="Announcement01" class="acme.entities.announcement.Announcement">
 		<property name="title" value="Titulo01"/>
@@ -269,5 +297,117 @@
 		<property name="description" value="O una caravana"/>
 		<property name="reward" value="EUR 999.99"/>
 		<property name="ticker" value="RUIGH-98744"/>
+	</bean>
+	
+	
+	 <!-- D04 -->
+	  <!-- Message -->
+	 <bean id="Message01" class="acme.entities.messageThread.Message">
+		<property name="title" value="Un mensaje de algo"/>
+		<property name="body" value="Este es el cuerpo del mensaje"/>
+		<property name="moment" value="2019/09/06 09:30"/>
+		<property name="tags">
+			<list>
+				<value>Menssage</value>
+				<value>Population</value>
+				<value>Algo mas que poner</value>
+			</list>
+		</property>
+		<property name="user" ref="administratorAuthenticated"/>
+	</bean>
+	<bean id="Message02" class="acme.entities.messageThread.Message">
+		<property name="title" value="Otro mensaje mas"/>
+		<property name="body" value="Este es el cuerpo del mensaje 2"/>
+		<property name="moment" value="2019/09/06 09:32"/>
+		<property name="tags">
+			<list>
+				<value>Menssage</value>
+				<value>Population</value>
+				<value>:)</value>
+			</list>
+		</property>
+		<property name="user" ref="administratorAuthenticated"/>
+	</bean>
+	<bean id="Message03" class="acme.entities.messageThread.Message">
+		<property name="title" value="Aun mas mensajes"/>
+		<property name="body" value="Este es el cuerpo del mensaje 3"/>
+		<property name="moment" value="2019/09/06 09:40"/>
+		<property name="tags">
+			<list>
+				<value>Menssage</value>
+				<value>Population</value>
+				<value>Tres</value>
+			</list>
+		</property>
+		<property name="user" ref="administratorAuthenticated"/>
+	</bean>
+	<bean id="Message04" class="acme.entities.messageThread.Message">
+		<property name="title" value="Que tal"/>
+		<property name="body" value="Buenos dias"/>
+		<property name="moment" value="2019/09/06 10:30"/>
+		<property name="tags">
+			<list>
+				<value>Menssage</value>
+				<value>Population</value>
+				<value>Adios</value>
+			</list>
+		</property>
+		<property name="user" ref="administratorAuthenticated"/>
+	</bean>
+	<bean id="Message05" class="acme.entities.messageThread.Message">
+		<property name="title" value="Saludo"/>
+		<property name="body" value="Holaa"/>
+		<property name="moment" value="2019/09/06 11:30"/>
+		<property name="tags">
+			<list>
+				<value>Menssage</value>
+				<value>Hola</value>
+				<value>Por poner algo</value>
+			</list>
+		</property>
+		<property name="user" ref="administratorAuthenticated"/>
+	</bean>
+	 <!-- MessageThreads -->
+	 <bean id="MessageThread01" class="acme.entities.messageThread.MessageThread">
+		<property name="title" value="Hilo de mensajes"/>
+		<property name="moment" value="2019/09/03 09:30"/>
+		<property name="messages">
+			<list>
+				<ref bean="Message01" />
+				<ref bean="Message02" />
+				<ref bean="Message03" />
+			</list>
+		</property>
+	</bean>
+	 <bean id="MessageThread02" class="acme.entities.messageThread.MessageThread">
+		<property name="title" value="Comentarios"/>
+		<property name="moment" value="2019/09/05 09:30"/>
+		<property name="messages">
+			<list>
+				<ref bean="Message04" />
+				<ref bean="Message05" />
+			</list>
+		</property>
+	</bean>
+	 <bean id="MessageThread03" class="acme.entities.messageThread.MessageThread">
+		<property name="title" value="Vacio"/>
+		<property name="moment" value="2019/09/03 09:30"/>
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+	</bean>
+	 <!-- UsersInvolved -->
+	 <bean id="UsersInvolved01" class="acme.entities.messageThread.UserInvolved">
+		<property name="messageThread" ref="MessageThread01"/>
+		<property name="user" ref="administratorAuthenticated"/>
+	</bean>
+	<bean id="UsersInvolved02" class="acme.entities.messageThread.UserInvolved">
+		<property name="messageThread" ref="MessageThread02"/>
+		<property name="user" ref="administratorAuthenticated"/>
+	</bean>
+	<bean id="UsersInvolved03" class="acme.entities.messageThread.UserInvolved">
+		<property name="messageThread" ref="MessageThread03"/>
+		<property name="user" ref="administratorAuthenticated"/>
 	</bean>
 </beans>

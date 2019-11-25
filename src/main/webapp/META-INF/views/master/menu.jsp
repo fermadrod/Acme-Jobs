@@ -67,6 +67,7 @@
 			<acme:menu-suboption code="master.menu.user-account.records" action="/authenticated/records/list"/>
 			<acme:menu-suboption code="master.menu.user-account.investorRecord" action="/authenticated/investor-record/list"/>
 			<acme:menu-suboption code="master.menu.user-account.request" action="/authenticated/request/list"/>
+			<acme:menu-suboption code="master.menu.user-account.messageThreads" action="/authenticated/message-thread/list"/>
 		</acme:menu-option>
 	</acme:menu-left>
 

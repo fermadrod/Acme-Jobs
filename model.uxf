@@ -74,13 +74,13 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>476</x>
+      <x>469</x>
       <y>140</y>
-      <w>126</w>
+      <w>133</w>
       <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>160.0;40.0;40.0;10.0;10.0;60.0</additional_attributes>
+    <additional_attributes>170.0;40.0;50.0;10.0;10.0;60.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -194,7 +194,7 @@ Provider
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>336</x>
+      <x>329</x>
       <y>161</y>
       <w>147</w>
       <h>63</h>
@@ -739,7 +739,7 @@ m2=1
 Auditor
 --
 + firm : String {NotBlank}
-+ responsibilityStatement.: String {NotBlank}</panel_attributes>
++ responsibilityStatement : String {NotBlank}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -841,7 +841,7 @@ Message
       <w>245</w>
       <h>77</h>
     </coordinates>
-    <panel_attributes>lt=x-&gt;
+    <panel_attributes>lt=&lt;-x
 m1=0..*
 m2=1
 has &gt;</panel_attributes>
@@ -927,5 +927,19 @@ m1=0..*
 m2=1
 creates &gt;</panel_attributes>
     <additional_attributes>230.0;30.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>826</x>
+      <y>42</y>
+      <w>721</w>
+      <h>196</h>
+    </coordinates>
+    <panel_attributes>lt=x-&gt;
+m1=0..*
+m2=1
+has &gt;</panel_attributes>
+    <additional_attributes>990.0;260.0;990.0;20.0;100.0;20.0;10.0;100.0</additional_attributes>
   </element>
 </diagram>

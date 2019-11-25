@@ -86,6 +86,34 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `message` (
+       `id` integer not null,
+        `version` integer not null,
+        `body` varchar(255),
+        `moment` datetime(6),
+        `title` varchar(255),
+        `user_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `message_thread` (
+       `id` integer not null,
+        `version` integer not null,
+        `moment` datetime(6),
+        `title` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `message_thread_message` (
+       `message_thread_id` integer not null,
+        `messages_id` integer not null
+    ) engine=InnoDB;
+
+    create table `message_tags` (
+       `message_id` integer not null,
+        `tags` varchar(255)
+    ) engine=InnoDB;
+
     create table `non_commercial_banner` (
        `id` integer not null,
         `version` integer not null,
@@ -158,11 +186,22 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `user_involved` (
+       `id` integer not null,
+        `version` integer not null,
+        `message_thread_id` integer not null,
+        `user_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `hibernate_sequence` (
        `next_val` bigint
     ) engine=InnoDB;
 
     insert into `hibernate_sequence` values ( 1 );
+
+    alter table `message_thread_message` 
+       add constraint UK_bx8ll7j8be93gcj4mnbmvm2rk unique (`messages_id`);
 
     alter table `offer` 
        add constraint UK_iex7e8fs0fh89yxpcnm1orjkm unique (`ticker`);
@@ -198,7 +237,37 @@
        foreign key (`customization_parameters_id`) 
        references `customization_parameters` (`id`);
 
+    alter table `message` 
+       add constraint `FKik4epe9dp5q6uenarfyia7xin` 
+       foreign key (`user_id`) 
+       references `authenticated` (`id`);
+
+    alter table `message_thread_message` 
+       add constraint `FKka0a2jm3m6obl7wa6586cqyp4` 
+       foreign key (`messages_id`) 
+       references `message` (`id`);
+
+    alter table `message_thread_message` 
+       add constraint `FKp1bkunf5gyu1vtt1q3f2djagy` 
+       foreign key (`message_thread_id`) 
+       references `message_thread` (`id`);
+
+    alter table `message_tags` 
+       add constraint `FKk6j00y1eiyu6qe5gad8rvefed` 
+       foreign key (`message_id`) 
+       references `message` (`id`);
+
     alter table `provider` 
        add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `user_involved` 
+       add constraint `FKevpise8r0ofnf4xpw18mkgesw` 
+       foreign key (`message_thread_id`) 
+       references `message_thread` (`id`);
+
+    alter table `user_involved` 
+       add constraint `FKn5kf90daeyb1rcq0soeax5tx3` 
+       foreign key (`user_id`) 
+       references `authenticated` (`id`);

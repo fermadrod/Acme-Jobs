@@ -47,14 +47,14 @@
 	<!-- Administrators -->
 	
 	<bean name="administratorUserAccount" class="acme.framework.entities.UserAccount">
-		<property name="username" value="administrator" />
-		<property name="password" value="administrator" />
+		<property name="username" value="administrator01" />
+		<property name="password" value="administrator01" />
 		<property name="enabled" value="true" />
 		<property name="identity">
 			<bean class="acme.datatypes.UserIdentity">
 				<property name="name" value="Administrator" />
-				<property name="surname" value="Acme.com" />
-				<property name="email" value="administrator@acme.com" />
+				<property name="surname" value="Acme1.com" />
+				<property name="email" value="administrator1@acme.com" />
 			</bean>
 		</property>
 		<property name="roles">

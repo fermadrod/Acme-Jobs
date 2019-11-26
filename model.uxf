@@ -560,6 +560,7 @@ Job
 + reference : String {NotBlank, Unique, Pattern("EEEE-JJJJ")}
 + status : Boolean {NotNull}
 + title : String {NotBlank}
++ moreInfo : String {URL}
 + deadline: Date{Temporal(TIMESAMP), NotNull}
 + salary : Money {NonNull}
 + moreInfo : String {URL}
@@ -626,7 +627,7 @@ Descriptor
       <w>70</w>
       <h>91</h>
     </coordinates>
-    <panel_attributes>lt=x-&gt;
+    <panel_attributes>lt=-&gt;
 m1=1
 m2=1
 &lt; describes</panel_attributes>

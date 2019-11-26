@@ -76,6 +76,15 @@
         `spam_words` varchar(255)
     ) engine=InnoDB;
 
+    create table `employer` (
+       `id` integer not null,
+        `version` integer not null,
+        `user_account_id` integer,
+        `company` varchar(255),
+        `sector` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `investor_record` (
        `id` integer not null,
         `version` integer not null,
@@ -83,6 +92,20 @@
         `name` varchar(255),
         `sector` varchar(255),
         `stars` double precision,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `job` (
+       `id` integer not null,
+        `version` integer not null,
+        `deadline` datetime(6),
+        `more_info` varchar(255),
+        `reference` varchar(255),
+        `salary_amount` double precision,
+        `salary_currency` varchar(255),
+        `status` bit,
+        `title` varchar(255),
+        `employer_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -200,6 +223,9 @@
 
     insert into `hibernate_sequence` values ( 1 );
 
+    alter table `job` 
+       add constraint UK_7jmfdvs0b0jx7i33qxgv22h7b unique (`reference`);
+
     alter table `message_thread_message` 
        add constraint UK_bx8ll7j8be93gcj4mnbmvm2rk unique (`messages_id`);
 
@@ -236,6 +262,16 @@
        add constraint `FKhcqquyqtys40tece78apjsbyt` 
        foreign key (`customization_parameters_id`) 
        references `customization_parameters` (`id`);
+
+    alter table `employer` 
+       add constraint FK_na4dfobmeuxkwf6p75abmb2tr 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);
+
+    alter table `job` 
+       add constraint `FK3rxjf8uh6fh2u990pe8i2at0e` 
+       foreign key (`employer_id`) 
+       references `employer` (`id`);
 
     alter table `message` 
        add constraint `FKik4epe9dp5q6uenarfyia7xin` 

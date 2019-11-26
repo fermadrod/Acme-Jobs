@@ -19,6 +19,14 @@
        drop 
        foreign key `FKhcqquyqtys40tece78apjsbyt`;
 
+    alter table `employer` 
+       drop 
+       foreign key FK_na4dfobmeuxkwf6p75abmb2tr;
+
+    alter table `job` 
+       drop 
+       foreign key `FK3rxjf8uh6fh2u990pe8i2at0e`;
+
     alter table `message` 
        drop 
        foreign key `FKik4epe9dp5q6uenarfyia7xin`;
@@ -65,7 +73,11 @@
 
     drop table if exists `customization_parameters_spam_words`;
 
+    drop table if exists `employer`;
+
     drop table if exists `investor_record`;
+
+    drop table if exists `job`;
 
     drop table if exists `message`;
 

@@ -37,6 +37,11 @@ master.menu.anonymous.starsCR = Registros de la compañia con 5 estrellas
 master.menu.anonymous.investorRecord = Lista de registros de inversion
 master.menu.anonymous.investorRecordStars = Lista de registros de inversion con cinco estrellas
 
+# master.menu.employer #################################################################
+
+master.menu.employer = Employer
+master.menu.employer.job.listmine = List my jobs
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador

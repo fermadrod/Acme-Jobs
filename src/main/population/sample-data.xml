@@ -105,8 +105,64 @@
 	<bean name="employer2Autenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="employer2UserAccount" />
 	</bean>
+	<!-- AUDITORS -->
+	<bean name="auditor1UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="auditor1" />
+		<property name="password" value="auditor1" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="auditor" />
+				<property name="surname" value="One" />
+				<property name="email" value="auditor1@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="auditor1Auditor" />
+				<ref bean="auditor1Autenticated" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="auditor1Auditor" class="acme.entities.roles.Auditor">
+		<property name="userAccount" ref="auditor1UserAccount" />
+		<property name="firm" value="Firma 1" />
+		<property name="responsibilityStatement" value="Algo que poner" />
+	</bean>
 	
+	<bean name="auditor1Autenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="auditor1UserAccount" />
+	</bean>
 	
+	<bean name="auditor2UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="auditor2" />
+		<property name="password" value="auditor2" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="auditor2" />
+				<property name="surname" value="One" />
+				<property name="email" value="auditor2@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="auditor2Auditor" />
+				<ref bean="auditor2Autenticated" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="auditor2Auditor" class="acme.entities.roles.Auditor">
+		<property name="userAccount" ref="auditor2UserAccount" />
+		<property name="firm" value="Firma 2" />
+		<property name="responsibilityStatement" value="Algo que poner" />
+	</bean>
+	
+	<bean name="auditor2Autenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="auditor2UserAccount" />
+	</bean>
 	<!-- ANNOUNCEMENTS -->
 	<bean id="Announcement01" class="acme.entities.announcement.Announcement">
 		<property name="title" value="Titulo01"/>
@@ -142,7 +198,7 @@
 	<bean id="Offer01" class="acme.entities.offer.Offer">
 		<property name="title" value="Titulo01"/>
 		<property name="moment" value="2019/10/27 10:10"/>
-		<property name="deadline" value="2019/12/27 10:10"/>
+		<property name="deadline" value="2020/12/27 10:10"/>
 		<property name="text" value="Description01"/>
 		<property name="reward" value="EUR 5001.2"/>
 		<property name="ticker" value="OADCD-55555"/>
@@ -158,7 +214,7 @@
 	<bean id="Offer03" class="acme.entities.offer.Offer">
 		<property name="title" value="Titulo03"/>
 		<property name="moment" value="2019/10/26 10:10"/>
-		<property name="deadline" value="2019/12/30 10:10"/>
+		<property name="deadline" value="2020/12/30 10:10"/>
 		<property name="text" value="Description03"/>
 		<property name="reward" value="EUR 5001.2"/>
 		<property name="ticker" value="OACDC-14355"/>
@@ -166,7 +222,7 @@
 	<bean id="Offer04" class="acme.entities.offer.Offer">
 		<property name="title" value="Titulo04"/>
 		<property name="moment" value="2019/10/25 10:10"/>
-		<property name="deadline" value="2019/11/27 10:10"/>
+		<property name="deadline" value="2020/11/27 10:10"/>
 		<property name="text" value="Description04"/>
 		<property name="reward" value="EUR 20.2"/>
 		<property name="ticker" value="OADCX-44445"/>
@@ -174,7 +230,7 @@
 	<bean id="Offer05" class="acme.entities.offer.Offer">
 		<property name="title" value="Titulo05"/>
 		<property name="moment" value="2019/10/28 10:10"/>
-		<property name="deadline" value="2019/12/28 10:10"/>
+		<property name="deadline" value="2020/12/28 10:10"/>
 		<property name="text" value="Description05"/>
 		<property name="reward" value="EUR 501.2"/>
 		<property name="ticker" value="OADCW-75055"/>
@@ -519,5 +575,45 @@
 		<property name="salary" value="EUR 5000.0"/>
 		<property name="employer" ref="employer2Employer"/>
 	</bean>
-	 
+	 <!-- AuditorRecord -->
+	 <bean id="AuditorRecord01" class="acme.entities.auditorRecord.AuditorRecord">
+		<property name="title" value="Titulo01"/>
+		<property name="body" value="Cuerpo del auditor1"/>
+		<property name="moment" value="2019/09/11 10:10"/>
+		<property name="status" value="true"/>
+		<property name="auditor" ref="auditor1Auditor"/>
+		<property name="job" ref="Job01"/>
+	</bean>
+	<bean id="AuditorRecord02" class="acme.entities.auditorRecord.AuditorRecord">
+		<property name="title" value="Titulo02"/>
+		<property name="body" value="Cuerpo del auditor2"/>
+		<property name="moment" value="2019/09/12 10:10"/>
+		<property name="status" value="true"/>
+		<property name="auditor" ref="auditor2Auditor"/>
+		<property name="job" ref="Job01"/>
+	</bean>
+	<bean id="AuditorRecord03" class="acme.entities.auditorRecord.AuditorRecord">
+		<property name="title" value="Titulo03"/>
+		<property name="body" value="Cuerpo del auditor3"/>
+		<property name="moment" value="2019/09/13 10:10"/>
+		<property name="status" value="true"/>
+		<property name="auditor" ref="auditor1Auditor"/>
+		<property name="job" ref="Job02"/>
+	</bean>
+	<bean id="AuditorRecord04" class="acme.entities.auditorRecord.AuditorRecord">
+		<property name="title" value="Titulo04"/>
+		<property name="body" value="Cuerpo del auditor4"/>
+		<property name="moment" value="2019/09/14 10:10"/>
+		<property name="status" value="true"/>
+		<property name="auditor" ref="auditor1Auditor"/>
+		<property name="job" ref="Job03"/>
+	</bean>
+	<bean id="AuditorRecord05" class="acme.entities.auditorRecord.AuditorRecord">
+		<property name="title" value="Titulo05"/>
+		<property name="body" value="Cuerpo del auditor5"/>
+		<property name="moment" value="2019/09/15 10:10"/>
+		<property name="status" value="true"/>
+		<property name="auditor" ref="auditor2Auditor"/>
+		<property name="job" ref="Job04"/>
+	</bean>
 </beans>

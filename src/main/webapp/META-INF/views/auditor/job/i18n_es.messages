@@ -8,23 +8,24 @@
 # purposes.  The copyright owner does not job any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-employer.job.list.label.deadline = Finalizacion
-employer.job.list.label.reference = Numero de referencia
-employer.job.list.label.salary = Salario
-employer.job.list.label.title = Titulo
+auditor.job.list.label.deadline = Finalizacion
+auditor.job.list.label.reference = Numero de referencia
+auditor.job.list.label.salary = Salario
+auditor.job.list.label.title = Titulo
 
-employer.job.form.button.return = Volver
-employer.job.form.label.salary = Salario
-employer.job.form.label.deadline = Finalizacion
-employer.job.form.label.title = Titulo
-employer.job.form.label.reference = Numero de referencia
-employer.job.form.label.moreInfo = Mas informacion
-employer.job.form.label.status = ¿Publicado?
+auditor.job.form.button.return = Volver
+auditor.job.form.label.salary = Salario
+auditor.job.form.label.deadline = Finalizacion
+auditor.job.form.label.title = Titulo
+auditor.job.form.label.reference = Numero de referencia
+auditor.job.form.label.moreInfo = Mas informacion
+auditor.job.form.label.status = ¿Publicado?
 
-employer.job.form.label.accept = Acepto que mi oferta una vez creada no podra ser ni eliminada ni modificada
-employer.job.form.label.unique = El ticker debe ser unico
-employer.job.form.label.reward.error = La recompensa debe estar en EUR
-employer.job.form.label.deadline.error = La fecha debe ser en futuro
-employer.job.form.label.accept = Debe aceptar las condiciones
+auditor.job.form.label.accept = Acepto que mi oferta una vez creada no podra ser ni eliminada ni modificada
+auditor.job.form.label.unique = El ticker debe ser unico
+auditor.job.form.label.reward.error = La recompensa debe estar en EUR
+auditor.job.form.label.deadline.error = La fecha debe ser en futuro
+auditor.job.form.label.accept = Debe aceptar las condiciones
 
-employer.job.form.button.create = Crear oferta
+auditor.job.form.button.auditorRecord = Ver los registros de auditor
+auditor.job.form.button.create = Crear oferta

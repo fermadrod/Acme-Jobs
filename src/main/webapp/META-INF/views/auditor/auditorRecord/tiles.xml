@@ -8,7 +8,7 @@
 - In keeping with the traditional purpose of furthering education and research, it is
 - the policy of the copyright owner to permit non-commercial use and redistribution of
 - this software. It has been tested carefully, but it is not guaranteed for any particular
-- purposes.  The copyright owner does not job any warranties or representations, nor do
+- purposes.  The copyright owner does not auditorRecord any warranties or representations, nor do
 - they accept any liabilities with respect to them.
 -->
 
@@ -18,12 +18,12 @@
 	
 <tiles-definitions>
 
-	<definition name="auditor/job/list" extends="master">		
-		<put-attribute name="body" type="template" value="../auditor/job/list.jsp" />
+	<definition name="auditor/auditor-record/list" extends="master">		
+		<put-attribute name="body" type="template" value="../auditor/auditorRecord/list.jsp" />
 	</definition>
 	
-	<definition name="auditor/job/form" extends="master">
-		<put-attribute name="body" type="template" value="../auditor/job/form.jsp" />
+	<definition name="auditor/auditor-record/form" extends="master">
+		<put-attribute name="body" type="template" value="../auditor/auditorRecord/form.jsp" />
 	</definition>
 	
 </tiles-definitions>

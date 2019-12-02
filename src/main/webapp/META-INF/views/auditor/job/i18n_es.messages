@@ -21,6 +21,7 @@ auditor.job.form.label.reference = Numero de referencia
 auditor.job.form.label.moreInfo = Mas informacion
 auditor.job.form.label.status = ¿Publicado?
 
+auditor.job.form.button.descriptor = Ver la descripcion
 auditor.job.form.label.accept = Acepto que mi oferta una vez creada no podra ser ni eliminada ni modificada
 auditor.job.form.label.unique = El ticker debe ser unico
 auditor.job.form.label.reward.error = La recompensa debe estar en EUR

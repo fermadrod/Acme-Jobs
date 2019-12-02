@@ -42,6 +42,11 @@ master.menu.anonymous.investorRecordStars = Lista de registros de inversion con 
 master.menu.employer = Empleado
 master.menu.employer.job.listmine = Listar mis trabajos
 
+# master.menu.worker #################################################################
+
+master.menu.worker = Trabajador
+master.menu.worker.aplication.listmine = Listar mis solicitudes
+
 # master.menu.auditor #################################################################
 
 master.menu.auditor = Auditor

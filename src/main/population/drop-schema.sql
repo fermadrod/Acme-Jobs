@@ -7,6 +7,18 @@
        drop 
        foreign key FK_6lnbc6fo3om54vugoh8icg78m;
 
+    alter table `auditor` 
+       drop 
+       foreign key FK_clqcq9lyspxdxcp6o4f3vkelj;
+
+    alter table `auditor_record` 
+       drop 
+       foreign key `FKjx5w0xtdjllmdj2el2rlx4wdj`;
+
+    alter table `auditor_record` 
+       drop 
+       foreign key `FKcpwoo69w5dhtr8nvg0xhl9qv9`;
+
     alter table `authenticated` 
        drop 
        foreign key FK_h52w0f3wjoi68b63wv9vwon57;
@@ -72,6 +84,10 @@
     drop table if exists `announcement`;
 
     drop table if exists `anonymous`;
+
+    drop table if exists `auditor`;
+
+    drop table if exists `auditor_record`;
 
     drop table if exists `authenticated`;
 

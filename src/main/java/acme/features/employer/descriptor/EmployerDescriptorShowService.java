@@ -5,9 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.descriptor.Descriptor;
+import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
 @Service
@@ -21,7 +23,19 @@ public class EmployerDescriptorShowService implements AbstractShowService<Employ
 	@Override
 	public boolean authorise(final Request<Descriptor> request) {
 		assert request != null;
-		return true;
+
+		boolean result;
+		int jobId;
+		Job job;
+		Employer employer;
+		Principal principal;
+
+		jobId = request.getModel().getInteger("id");
+		job = this.repository.findJobById(jobId);
+		employer = job.getEmployer();
+		principal = request.getPrincipal();
+		result = job.getStatus() || !job.getStatus() && employer.getUserAccount().getId() == principal.getActiveRoleId();
+		return result;
 	}
 
 	@Override
@@ -29,7 +43,7 @@ public class EmployerDescriptorShowService implements AbstractShowService<Employ
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "description");
+		request.unbind(entity, model, "description", "dutys");
 	}
 
 	@Override
@@ -40,7 +54,8 @@ public class EmployerDescriptorShowService implements AbstractShowService<Employ
 		int id;
 
 		id = request.getModel().getInteger("id");
-		result = this.repository.findOneById(id);
+		result = this.repository.findOneByJobId(id);
+		result.getDutys().size();
 
 		return result;
 	}

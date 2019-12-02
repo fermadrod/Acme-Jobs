@@ -524,56 +524,89 @@
 		<property name="employer" ref="employer2Employer"/>
 		<property name="descriptor" ref="Descriptor05"/>
 	</bean>
-	 <!-- Descriptor -->
-	<bean id="Descriptor01" class="acme.entities.descriptor.Descriptor">
-		<property name="description" value="Description01"/>
-		<property name="dutys" ref="Dutys01"/>
-	</bean>
-	<bean id="Descriptor02" class="acme.entities.descriptor.Descriptor">
-		<property name="description" value="Description02"/>
-		<property name="dutys" ref="Dutys02"/>
-	</bean>
-	<bean id="Descriptor03" class="acme.entities.descriptor.Descriptor">
-		<property name="description" value="Description03"/>
-		<property name="dutys" ref="Dutys03"/>
-	</bean>
-	<bean id="Descriptor04" class="acme.entities.descriptor.Descriptor">
-		<property name="description" value="Description04"/>
-		<property name="dutys" ref="Dutys04"/>
-	</bean>
-	<bean id="Descriptor05" class="acme.entities.descriptor.Descriptor">
-		<property name="description" value="Description05"/>
-		<property name="dutys" ref="Dutys05"/>
-	</bean>
-	<!-- Dutys -->
-	<bean id="Dutys01" class="acme.entities.dutys.Dutys">
+		<!-- Dutys -->
+	<bean id="Duty01" class="acme.entities.dutys.Duty">
 		<property name="title" value="Titulo01"/>
 		<property name="description" value="Description01"/>
 		<property name="percentaje" value="50.3"/>
 		
 	</bean>
-	<bean id="Dutys02" class="acme.entities.dutys.Dutys">
+	<bean id="Duty02" class="acme.entities.dutys.Duty">
 		<property name="title" value="Titulo02"/>
 		<property name="description" value="Description02"/>
 		<property name="percentaje" value="43.3"/>
 		
 	</bean>
-	<bean id="Dutys03" class="acme.entities.dutys.Dutys">
+	<bean id="Duty03" class="acme.entities.dutys.Duty">
 		<property name="title" value="Titulo03"/>
 		<property name="description" value="Description03"/>
 		<property name="percentaje" value="20.6"/>
 		
 	</bean>
-	<bean id="Dutys04" class="acme.entities.dutys.Dutys">
+	<bean id="Duty04" class="acme.entities.dutys.Duty">
 		<property name="title" value="Titulo04"/>
 		<property name="description" value="Description04"/>
 		<property name="percentaje" value="15.8"/>
 		
 	</bean>
-	<bean id="Dutys05" class="acme.entities.dutys.Dutys">
+	<bean id="Duty05" class="acme.entities.dutys.Duty">
 		<property name="title" value="Titulo05"/>
 		<property name="description" value="Description05"/>
 		<property name="percentaje" value="36.5"/>
 		
+	</bean>
+	<bean id="Duty06" class="acme.entities.dutys.Duty">
+		<property name="title" value="Titulo06"/>
+		<property name="description" value="Description06"/>
+		<property name="percentaje" value="5.5"/>
+		
+	</bean>
+	<bean id="Duty07" class="acme.entities.dutys.Duty">
+		<property name="title" value="Titulo07"/>
+		<property name="description" value="Description07"/>
+		<property name="percentaje" value="2.5"/>
+	</bean>
+	 <!-- Descriptor -->
+	<bean id="Descriptor01" class="acme.entities.descriptor.Descriptor">
+		<property name="description" value="Description01"/>
+		<property name="dutys">
+			<list>
+				<ref bean="Duty01" />
+				<ref bean="Duty02" />
+			</list>
+		</property>
+	</bean>
+	<bean id="Descriptor02" class="acme.entities.descriptor.Descriptor">
+		<property name="description" value="Description02"/>
+		<property name="dutys">
+			<list>
+				<ref bean="Duty03" />
+			</list>
+		</property>
+	</bean>
+	<bean id="Descriptor03" class="acme.entities.descriptor.Descriptor">
+		<property name="description" value="Description03"/>
+		<property name="dutys">
+			<list>
+			</list>
+		</property>
+	</bean>
+	<bean id="Descriptor04" class="acme.entities.descriptor.Descriptor">
+		<property name="description" value="Description04"/>
+		<property name="dutys">
+			<list>
+				<ref bean="Duty04" />
+				<ref bean="Duty05" />
+				<ref bean="Duty06" />
+			</list>
+		</property>
+	</bean>
+	<bean id="Descriptor05" class="acme.entities.descriptor.Descriptor">
+		<property name="description" value="Description05"/>
+		<property name="dutys">
+			<list>
+				<ref bean="Duty07" />
+			</list>
+		</property>
 	</bean>
 </beans>

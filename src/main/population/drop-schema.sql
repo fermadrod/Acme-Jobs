@@ -19,9 +19,13 @@
        drop 
        foreign key `FKhcqquyqtys40tece78apjsbyt`;
 
-    alter table `descriptor` 
+    alter table `descriptor_duty` 
        drop 
-       foreign key `FKivbyerlmtjcjka5ph45fb6jo3`;
+       foreign key `FKkm3m3388tiixfsn63295m8n13`;
+
+    alter table `descriptor_duty` 
+       drop 
+       foreign key `FKqitedkrksd2w8qyp1fp5eao9f`;
 
     alter table `employer` 
        drop 
@@ -83,7 +87,9 @@
 
     drop table if exists `descriptor`;
 
-    drop table if exists `dutys`;
+    drop table if exists `descriptor_duty`;
+
+    drop table if exists `duty`;
 
     drop table if exists `employer`;
 

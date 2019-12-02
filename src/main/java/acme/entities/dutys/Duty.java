@@ -2,8 +2,6 @@
 package acme.entities.dutys;
 
 import javax.persistence.Entity;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -14,7 +12,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Dutys extends DomainEntity {
+public class Duty extends DomainEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
@@ -24,8 +22,6 @@ public class Dutys extends DomainEntity {
 	@NotBlank
 	private String				description;
 
-	@Max(100)
-	@Min(0)
 	@NotNull
 	private Double				percentaje;
 

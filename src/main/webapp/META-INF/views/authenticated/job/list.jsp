@@ -17,6 +17,7 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="employer.descriptor.list.label.description" path="description" width="30%"/>
-
+	<acme:list-column code="authenticated.job.list.label.reference" path="reference" width="30%"/>
+	<acme:list-column code="authenticated.job.list.label.deadline" path="deadline" width="30%"/>
+	<acme:list-column code="authenticated.job.list.label.title" path="title" width="40%"/>
 </acme:list>

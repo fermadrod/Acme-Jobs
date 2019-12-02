@@ -80,11 +80,15 @@
        `id` integer not null,
         `version` integer not null,
         `description` varchar(255),
-        `dutys_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `dutys` (
+    create table `descriptor_duty` (
+       `descriptor_id` integer not null,
+        `dutys_id` integer not null
+    ) engine=InnoDB;
+
+    create table `duty` (
        `id` integer not null,
         `version` integer not null,
         `description` varchar(255),
@@ -241,6 +245,9 @@
 
     insert into `hibernate_sequence` values ( 1 );
 
+    alter table `descriptor_duty` 
+       add constraint UK_gicb7at1idsamnu3xgj4i91vc unique (`dutys_id`);
+
     alter table `job` 
        add constraint UK_7jmfdvs0b0jx7i33qxgv22h7b unique (`reference`);
 
@@ -281,10 +288,15 @@
        foreign key (`customization_parameters_id`) 
        references `customization_parameters` (`id`);
 
-    alter table `descriptor` 
-       add constraint `FKivbyerlmtjcjka5ph45fb6jo3` 
+    alter table `descriptor_duty` 
+       add constraint `FKkm3m3388tiixfsn63295m8n13` 
        foreign key (`dutys_id`) 
-       references `dutys` (`id`);
+       references `duty` (`id`);
+
+    alter table `descriptor_duty` 
+       add constraint `FKqitedkrksd2w8qyp1fp5eao9f` 
+       foreign key (`descriptor_id`) 
+       references `descriptor` (`id`);
 
     alter table `employer` 
        add constraint FK_na4dfobmeuxkwf6p75abmb2tr 

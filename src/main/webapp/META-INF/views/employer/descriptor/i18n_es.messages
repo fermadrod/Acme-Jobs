@@ -9,7 +9,12 @@
 # they accept any liabilities with respect to them.
 
 employer.descriptor.list.label.description = Descripcion
-
+employer.descriptor.dutys = Tareas
+employer.duty.form.label.title = Titulo
+employer.duty.form.label.description = Descripcion
+employer.duty.form.label.percentaje = Porcentaje
+employer.duty.list.label.title = Titulo
+employer.duty.list.label.percentaje = Porcentaje
 
 employer.descriptor.form.button.return = Volver
 employer.descriptor.form.label.description = Descripcion

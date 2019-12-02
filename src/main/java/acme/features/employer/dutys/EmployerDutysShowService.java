@@ -4,14 +4,14 @@ package acme.features.employer.dutys;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.dutys.Dutys;
+import acme.entities.dutys.Duty;
 import acme.entities.roles.Employer;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class EmployerDutysShowService implements AbstractShowService<Employer, Dutys> {
+public class EmployerDutysShowService implements AbstractShowService<Employer, Duty> {
 
 	//Internal State -----------------------------
 	@Autowired
@@ -19,24 +19,24 @@ public class EmployerDutysShowService implements AbstractShowService<Employer, D
 
 
 	@Override
-	public boolean authorise(final Request<Dutys> request) {
+	public boolean authorise(final Request<Duty> request) {
 		assert request != null;
 		return true;
 	}
 
 	@Override
-	public void unbind(final Request<Dutys> request, final Dutys entity, final Model model) {
+	public void unbind(final Request<Duty> request, final Duty entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "title", "description", "precentaje");
+		request.unbind(entity, model, "title", "description", "percentaje");
 	}
 
 	@Override
-	public Dutys findOne(final Request<Dutys> request) {
+	public Duty findOne(final Request<Duty> request) {
 		assert request != null;
 
-		Dutys result;
+		Duty result;
 		int id;
 
 		id = request.getModel().getInteger("id");

@@ -104,6 +104,7 @@ master.menu.user-account.offer = List offers
 master.menu.user-account.records = Company records
 master.menu.user-account.investorRecord = List Investor Records
 master.menu.user-account.request = List requests
+master.menu.user-account.job.list = List jobs
 
 # master.footer ###############################################################
 

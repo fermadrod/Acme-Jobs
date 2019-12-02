@@ -28,4 +28,7 @@ employer.job.form.label.deadline.error = La fecha debe ser en futuro
 employer.job.form.label.accept = Debe aceptar las condiciones
 
 employer.job.form.button.auditorRecord = Ver los regitros de auditor
+
+employer.job.form.button.descriptor= Informacion de Descriptor
+
 employer.job.form.button.create = Crear oferta

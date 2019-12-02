@@ -1,40 +1,28 @@
 
-package acme.features.employer.job;
+package acme.features.authenticated.job;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.jobs.Job;
-import acme.entities.roles.Employer;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Principal;
+import acme.framework.entities.Authenticated;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class EmployerJobShowService implements AbstractShowService<Employer, Job> {
+public class AuthenticatedJobShowService implements AbstractShowService<Authenticated, Job> {
 
 	//Internal State -----------------------------
 	@Autowired
-	EmployerJobRepository repository;
+	AuthenticatedJobRepository repository;
 
 
 	@Override
 	public boolean authorise(final Request<Job> request) {
 		assert request != null;
 
-		boolean result;
-		int jobId;
-		Job job;
-		Employer employer;
-		Principal principal;
-
-		jobId = request.getModel().getInteger("id");
-		job = this.repository.findOneById(jobId);
-		employer = job.getEmployer();
-		principal = request.getPrincipal();
-		result = job.getStatus() || !job.getStatus() && employer.getUserAccount().getId() == principal.getActiveRoleId();
-		return result;
+		return true;
 	}
 
 	@Override

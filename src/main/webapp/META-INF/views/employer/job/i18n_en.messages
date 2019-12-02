@@ -18,6 +18,7 @@ employer.job.form.label.unique = Ticker must be unique
 employer.job.form.label.reward.error = Reward must be in EUR
 employer.job.form.label.deadline.error = Deadline must be in future
 employer.job.form.label.accept = Must accept the conditions
+employer.job.form.button.descriptor= Descriptor Information
 
 employer.job.form.button.auditorRecord = See the auditor records
 employer.job.form.button.create = Create job

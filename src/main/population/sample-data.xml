@@ -532,48 +532,138 @@
 	 <!-- Jobs -->
 	 <bean id="Job01" class="acme.entities.jobs.Job">
 		<property name="title" value="Titulo01"/>
-		<property name="reference" value="EMP1-JOB2"/>
+		<property name="reference" value="EMPA-JOBB"/>
 		<property name="deadline" value="2020/12/27 10:10"/>
 		<property name="moreInfo" value="http://acme.com"/>
 		<property name="status" value="true"/>
 		<property name="salary" value="EUR 501.2"/>
 		<property name="employer" ref="employer1Employer"/>
+		<property name="descriptor" ref="Descriptor01"/>
 	</bean>
 	<bean id="Job02" class="acme.entities.jobs.Job">
 		<property name="title" value="Titulo02"/>
-		<property name="reference" value="EMP1-JOB3"/>
+		<property name="reference" value="EMPA-JOBC"/>
 		<property name="deadline" value="2020/12/28 10:10"/>
 		<property name="moreInfo" value="http://acme.com"/>
 		<property name="status" value="true"/>
 		<property name="salary" value="EUR 500.0"/>
 		<property name="employer" ref="employer1Employer"/>
+		<property name="descriptor" ref="Descriptor02"/>
 	</bean>
 	<bean id="Job03" class="acme.entities.jobs.Job">
 		<property name="title" value="Titulo03"/>
-		<property name="reference" value="EMP1-JOB4"/>
+		<property name="reference" value="EMPA-JOBD"/>
 		<property name="deadline" value="2020/12/29 10:10"/>
 		<property name="moreInfo" value="http://acme.com"/>
 		<property name="status" value="true"/>
 		<property name="salary" value="EUR 400.0"/>
 		<property name="employer" ref="employer1Employer"/>
+		<property name="descriptor" ref="Descriptor03"/>
 	</bean>
 	<bean id="Job04" class="acme.entities.jobs.Job">
 		<property name="title" value="Titulo04"/>
-		<property name="reference" value="EMP2-JOB1"/>
+		<property name="reference" value="EMPB-JOBA"/>
 		<property name="deadline" value="2020/12/10 10:10"/>
 		<property name="moreInfo" value="http://acme.com"/>
 		<property name="status" value="true"/>
 		<property name="salary" value="EUR 501.2"/>
 		<property name="employer" ref="employer2Employer"/>
+		<property name="descriptor" ref="Descriptor04"/>
 	</bean>
 	<bean id="Job05" class="acme.entities.jobs.Job">
 		<property name="title" value="Titulo05"/>
-		<property name="reference" value="EMP2-JOB2"/>
+		<property name="reference" value="EMPB-JOBB"/>
 		<property name="deadline" value="2020/12/11 10:10"/>
 		<property name="moreInfo" value="http://acme.com"/>
 		<property name="status" value="true"/>
 		<property name="salary" value="EUR 5000.0"/>
 		<property name="employer" ref="employer2Employer"/>
+		<property name="descriptor" ref="Descriptor05"/>
+	</bean>
+		<!-- Dutys -->
+	<bean id="Duty01" class="acme.entities.dutys.Duty">
+		<property name="title" value="Titulo01"/>
+		<property name="description" value="Description01"/>
+		<property name="percentaje" value="50.3"/>
+		
+	</bean>
+	<bean id="Duty02" class="acme.entities.dutys.Duty">
+		<property name="title" value="Titulo02"/>
+		<property name="description" value="Description02"/>
+		<property name="percentaje" value="43.3"/>
+		
+	</bean>
+	<bean id="Duty03" class="acme.entities.dutys.Duty">
+		<property name="title" value="Titulo03"/>
+		<property name="description" value="Description03"/>
+		<property name="percentaje" value="20.6"/>
+		
+	</bean>
+	<bean id="Duty04" class="acme.entities.dutys.Duty">
+		<property name="title" value="Titulo04"/>
+		<property name="description" value="Description04"/>
+		<property name="percentaje" value="15.8"/>
+		
+	</bean>
+	<bean id="Duty05" class="acme.entities.dutys.Duty">
+		<property name="title" value="Titulo05"/>
+		<property name="description" value="Description05"/>
+		<property name="percentaje" value="36.5"/>
+		
+	</bean>
+	<bean id="Duty06" class="acme.entities.dutys.Duty">
+		<property name="title" value="Titulo06"/>
+		<property name="description" value="Description06"/>
+		<property name="percentaje" value="5.5"/>
+		
+	</bean>
+	<bean id="Duty07" class="acme.entities.dutys.Duty">
+		<property name="title" value="Titulo07"/>
+		<property name="description" value="Description07"/>
+		<property name="percentaje" value="2.5"/>
+	</bean>
+	 <!-- Descriptor -->
+	<bean id="Descriptor01" class="acme.entities.descriptor.Descriptor">
+		<property name="description" value="Description01"/>
+		<property name="dutys">
+			<list>
+				<ref bean="Duty01" />
+				<ref bean="Duty02" />
+			</list>
+		</property>
+	</bean>
+	<bean id="Descriptor02" class="acme.entities.descriptor.Descriptor">
+		<property name="description" value="Description02"/>
+		<property name="dutys">
+			<list>
+				<ref bean="Duty03" />
+			</list>
+		</property>
+	</bean>
+	<bean id="Descriptor03" class="acme.entities.descriptor.Descriptor">
+		<property name="description" value="Description03"/>
+		<property name="dutys">
+			<list>
+			</list>
+		</property>
+	</bean>
+	<bean id="Descriptor04" class="acme.entities.descriptor.Descriptor">
+		<property name="description" value="Description04"/>
+		<property name="dutys">
+			<list>
+				<ref bean="Duty04" />
+				<ref bean="Duty05" />
+				<ref bean="Duty06" />
+			</list>
+		</property>
+	</bean>
+	<bean id="Descriptor05" class="acme.entities.descriptor.Descriptor">
+		<property name="description" value="Description05"/>
+		<property name="dutys">
+			<list>
+				<ref bean="Duty07" />
+			</list>
+		</property>
 	</bean>
 	 <!-- AuditorRecord -->
 	 <bean id="AuditorRecord01" class="acme.entities.auditorRecord.AuditorRecord">

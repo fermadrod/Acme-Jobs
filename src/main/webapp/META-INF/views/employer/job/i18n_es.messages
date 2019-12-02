@@ -13,6 +13,7 @@ employer.job.list.label.reference = Numero de referencia
 employer.job.list.label.salary = Salario
 employer.job.list.label.title = Titulo
 
+employer.job.form.button.auditorRecord = Ver los auditor record
 employer.job.form.button.return = Volver
 employer.job.form.label.salary = Salario
 employer.job.form.label.deadline = Finalizacion

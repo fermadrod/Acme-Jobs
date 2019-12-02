@@ -13,6 +13,8 @@ authenticated.job.list.label.reference = Numero de referencia
 authenticated.job.list.label.salary = Salario
 authenticated.job.list.label.title = Titulo
 
+
+authenticated.job.form.button.auditorRecord = Ver los registror de auditor
 authenticated.job.form.button.return = Volver
 authenticated.job.form.label.salary = Salario
 authenticated.job.form.label.deadline = Finalizacion

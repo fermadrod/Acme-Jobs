@@ -9,7 +9,8 @@
 	<acme:form-money code="auditor.job.form.label.salary" path="salary"/>
 	<acme:form-textarea code="auditor.job.form.label.reference" path="reference"/>
 	<acme:form-textbox code="auditor.job.form.label.moreInfo" path="moreInfo"/>
-	
+	<acme:form-submit code="auditor.job.form.button.descriptor"
+				  method="get" action="/authenticated/descriptor/show?id=${id}"/>
 	<acme:form-submit code="auditor.job.form.button.auditorRecord" method="get" action="/auditor/auditor-record/list?id=${id}"/>
 	<acme:form-return code="auditor.job.form.button.return"/>
 </acme:form>

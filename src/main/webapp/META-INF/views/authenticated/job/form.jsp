@@ -12,5 +12,6 @@
 	<acme:form-checkbox code="authenticated.job.form.label.status" path="status"/>
 		<acme:form-submit code="authenticated.job.form.button.descriptor"
 				  method="get" action="/authenticated/descriptor/show?id=${id}"/>
+	<acme:form-submit code="authenticated.job.form.button.auditorRecord" method="get" action="/authenticated/auditor-record/list?id=${id}"/>
 	<acme:form-return code="authenticated.job.form.button.return"/>
 </acme:form>

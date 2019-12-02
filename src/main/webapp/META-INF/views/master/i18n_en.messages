@@ -42,6 +42,12 @@ master.menu.anonymous.investorRecordStars = List investor records with 5 star
 master.menu.employer = Employer
 master.menu.employer.job.listmine = List my jobs
 
+# master.menu.auditor #################################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.job.listmine = List my jobs
+
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator

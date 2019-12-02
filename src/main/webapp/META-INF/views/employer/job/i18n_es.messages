@@ -26,5 +26,5 @@ employer.job.form.label.unique = El ticker debe ser unico
 employer.job.form.label.reward.error = La recompensa debe estar en EUR
 employer.job.form.label.deadline.error = La fecha debe ser en futuro
 employer.job.form.label.accept = Debe aceptar las condiciones
-
+employer.job.form.button.descriptor= Informacion de Descriptor
 employer.job.form.button.create = Crear oferta

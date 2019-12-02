@@ -19,9 +19,17 @@
        drop 
        foreign key `FKhcqquyqtys40tece78apjsbyt`;
 
+    alter table `descriptor` 
+       drop 
+       foreign key `FKivbyerlmtjcjka5ph45fb6jo3`;
+
     alter table `employer` 
        drop 
        foreign key FK_na4dfobmeuxkwf6p75abmb2tr;
+
+    alter table `job` 
+       drop 
+       foreign key `FKfqwyynnbcsq0htxho3vchpd2u`;
 
     alter table `job` 
        drop 
@@ -72,6 +80,10 @@
     drop table if exists `customization_parameters`;
 
     drop table if exists `customization_parameters_spam_words`;
+
+    drop table if exists `descriptor`;
+
+    drop table if exists `dutys`;
 
     drop table if exists `employer`;
 

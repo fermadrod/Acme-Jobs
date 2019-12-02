@@ -76,6 +76,23 @@
         `spam_words` varchar(255)
     ) engine=InnoDB;
 
+    create table `descriptor` (
+       `id` integer not null,
+        `version` integer not null,
+        `description` varchar(255),
+        `dutys_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `dutys` (
+       `id` integer not null,
+        `version` integer not null,
+        `description` varchar(255),
+        `percentaje` double precision,
+        `title` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `employer` (
        `id` integer not null,
         `version` integer not null,
@@ -105,6 +122,7 @@
         `salary_currency` varchar(255),
         `status` bit,
         `title` varchar(255),
+        `descriptor_id` integer not null,
         `employer_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
@@ -263,10 +281,20 @@
        foreign key (`customization_parameters_id`) 
        references `customization_parameters` (`id`);
 
+    alter table `descriptor` 
+       add constraint `FKivbyerlmtjcjka5ph45fb6jo3` 
+       foreign key (`dutys_id`) 
+       references `dutys` (`id`);
+
     alter table `employer` 
        add constraint FK_na4dfobmeuxkwf6p75abmb2tr 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `job` 
+       add constraint `FKfqwyynnbcsq0htxho3vchpd2u` 
+       foreign key (`descriptor_id`) 
+       references `descriptor` (`id`);
 
     alter table `job` 
        add constraint `FK3rxjf8uh6fh2u990pe8i2at0e` 

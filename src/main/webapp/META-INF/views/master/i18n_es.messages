@@ -40,7 +40,7 @@ master.menu.anonymous.investorRecordStars = Lista de registros de inversion con 
 # master.menu.employer #################################################################
 
 master.menu.employer = Employer
-master.menu.employer.job.listmine = List my jobs
+master.menu.employer.job.listmine = Listar mis trabajos
 
 # master.menu.administrator ###################################################
 
@@ -94,6 +94,7 @@ master.menu.user-account.offer = Lista de ofertas
 master.menu.user-account.records = Registros de la compañia
 master.menu.user-account.investorRecord = Lista de registros de inversion
 master.menu.user-account.request = Lista de peticiones
+master.menu.user-account.job.list = Listar los trabajos
 
 # master.footer ###############################################################
 

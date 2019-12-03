@@ -3,6 +3,7 @@ package acme.entities.descriptor;
 
 import java.util.Collection;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
@@ -22,6 +23,7 @@ public class Descriptor extends DomainEntity {
 
 	private static final long	serialVersionUID	= 1L;
 	@NotBlank
+	@Column(length = 1024)
 	private String				description;
 
 	//	//Relationships-----------------------------------

@@ -17,7 +17,7 @@ import acme.framework.entities.Authenticated;
 public class AuthenticatedJobController extends AbstractController<Authenticated, Job> {
 
 	@Autowired
-	AuthenticatedJobListMineService	listService;
+	AuthenticatedJobListService	listService;
 	@Autowired
 	AuthenticatedJobShowService		showService;
 

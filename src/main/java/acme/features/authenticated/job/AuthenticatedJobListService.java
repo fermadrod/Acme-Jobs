@@ -12,7 +12,7 @@ import acme.framework.entities.Authenticated;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AuthenticatedJobListMineService implements AbstractListService<Authenticated, Job> {
+public class AuthenticatedJobListService implements AbstractListService<Authenticated, Job> {
 
 	//Internal State -----------------------------
 	@Autowired

@@ -42,6 +42,13 @@ master.menu.anonymous.investorRecordStars = Lista de registros de inversion con 
 master.menu.employer = Employer
 master.menu.employer.job.listmine = List my jobs
 
+
+# master.menu.sponsor #################################################################
+master.menu.sponsor = Sponsor
+master.menu.sponsor.commercialBanner.create = Crear banners comerciales
+master.menu.sponsor.commercialBanner = Listar banners comerciales
+master.menu.sponsor.nonCommercialBanner.create = Crear banners no comerciales
+master.menu.sponsor.nonCommercialBanner = Listar banners no comerciales
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador

@@ -105,7 +105,66 @@
 	<bean name="employer2Autenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="employer2UserAccount" />
 	</bean>
+	<!-- Sponsor -->
 	
+	<bean name="sponsor1UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="sponsor1" />
+		<property name="password" value="sponsor1" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Sponsor" />
+				<property name="surname" value="One" />
+				<property name="email" value="sponsor1@acme.com" />
+			</bean>
+		</property>
+	
+		<property name="roles">
+			<list>
+				<ref bean="sponsor1Sponsor" />
+				<ref bean="sponsor1Authenticated" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="sponsor1Sponsor" class="acme.entities.roles.Sponsor">
+		<property name="name" value="Sponsor ej 1" />
+		<property name="creditCard" value="123456AX" />
+		<property name="userAccount" ref="sponsor1UserAccount" />
+	</bean>
+	
+	<bean name="sponsor1Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="sponsor1UserAccount" />
+	</bean>
+	
+		<bean name="sponsor2UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="sponsor2" />
+		<property name="password" value="sponsor2" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Sponsor" />
+				<property name="surname" value="One" />
+				<property name="email" value="sponsor2@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="sponsor2Sponsor" />
+				<ref bean="sponsor2Authenticated" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="sponsor2Sponsor" class="acme.entities.roles.Sponsor">
+		<property name="userAccount" ref="sponsor2UserAccount" />
+		<property name="name" value="Sponsor ej 2" />
+	
+	</bean>
+	
+	<bean name="sponsor2Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="sponsor2UserAccount" />
+	</bean>
 	
 	<!-- ANNOUNCEMENTS -->
 	<bean id="Announcement01" class="acme.entities.announcement.Announcement">
@@ -166,7 +225,7 @@
 	<bean id="Offer04" class="acme.entities.offer.Offer">
 		<property name="title" value="Titulo04"/>
 		<property name="moment" value="2019/10/25 10:10"/>
-		<property name="deadline" value="2019/11/27 10:10"/>
+		<property name="deadline" value="2019/12/27 10:10"/>
 		<property name="text" value="Description04"/>
 		<property name="reward" value="EUR 20.2"/>
 		<property name="ticker" value="OADCX-44445"/>
@@ -297,6 +356,7 @@
 		<property name="slogan" value="Flowers"/>
 		<property name="url" value="https://www.flores.com"/>
 		<property name="card" value="1111111111111111"/>
+		<property name="sponsor" ref="sponsor1Sponsor"/>
 		</bean>
 	
 		<bean id="Banner02" class="acme.entities.nonCommercialBanner.NonCommercialBanner">
@@ -304,6 +364,7 @@
 		<property name="slogan" value="Manquepierda"/>
 		<property name="url" value="https://www.betis.com"/>
 		<property name="jingle" value="patata"/>
+		<property name="sponsor" ref="sponsor2Sponsor"/>
 		</bean>
   	<!-- InvestorRecords -->
 	<bean id="InvestorRecord01" class="acme.entities.investorRecord.InvestorRecord">

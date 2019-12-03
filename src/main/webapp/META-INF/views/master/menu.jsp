@@ -63,6 +63,10 @@
 		<acme:menu-option code="master.menu.employer" access="hasRole('Employer')">
 			<acme:menu-suboption code="master.menu.employer.job.listmine" action="/employer/job/list-mine"/>
 		</acme:menu-option>
+		<%-- COLOCAR EN ESTE MENU TODO LO QUE PUEDA VER UN WORKER --%>
+		<acme:menu-option code="master.menu.worker" access="hasRole('Worker')">
+			<acme:menu-suboption code="master.menu.worker.aplication.listmine" action="/worker/application/list-mine"/>
+		</acme:menu-option>
 		<%-- COLOCAR EN ESTE MENU TODO LO QUE PUEDA VER UN AUDITOR --%>
 		<acme:menu-option code="master.menu.auditor" access="hasRole('Auditor')">
 			<acme:menu-suboption code="master.menu.auditor.auditorRecord.list" action="/auditor/auditor-record/list-mine"/>

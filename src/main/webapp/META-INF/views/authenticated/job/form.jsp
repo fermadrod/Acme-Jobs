@@ -10,6 +10,10 @@
 	<acme:form-textarea code="authenticated.job.form.label.reference" path="reference"/>
 	<acme:form-textbox code="authenticated.job.form.label.moreInfo" path="moreInfo"/>
 	<acme:form-checkbox code="authenticated.job.form.label.status" path="status"/>
+	<div class="form-group" >
+	<label><acme:message code="authenticated.job.form.label.employer"/></label>
+	<input readonly="readonly" type="text" class="form-control" value="${employer.userAccount.username}"> 
+	</div>
 		<acme:form-submit code="authenticated.job.form.button.descriptor"
 				  method="get" action="/authenticated/descriptor/show?id=${id}"/>
 	<acme:form-submit code="authenticated.job.form.button.auditorRecord" method="get" action="/authenticated/auditor-record/list?id=${id}"/>

@@ -22,7 +22,7 @@ employer.job.form.label.reference = Numero de referencia
 employer.job.form.label.moreInfo = Mas informacion
 employer.job.form.label.status = ¿Publicado?
 employer.job.form.button.application = Ver las solicitudes
-
+employer.job.form.label.employer = Empleado
 employer.job.form.label.accept = Acepto que mi oferta una vez creada no podra ser ni eliminada ni modificada
 employer.job.form.label.unique = El ticker debe ser unico
 employer.job.form.label.reward.error = La recompensa debe estar en EUR

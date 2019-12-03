@@ -31,4 +31,12 @@ public class Dashboard implements Serializable {
 
 	private Map<String, Integer>	investorGroupBySector;
 	private Map<String, Integer>	companyGroupBySector;
+
+	//D04
+	private Double					avgNumJobsPerEmmployer;
+	private Double					avgNumApplPerEmmployer;
+	private Double					avgNumApplPerWorker;
+
+	private Map<Boolean, Integer>	ratioJobGroupbyStatus;
+	private Map<String, Integer>	ratioAppGroupbyStatus;
 }

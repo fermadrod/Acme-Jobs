@@ -22,7 +22,7 @@ authenticated.job.form.label.title = Titulo
 authenticated.job.form.label.reference = Numero de referencia
 authenticated.job.form.label.moreInfo = Mas informacion
 authenticated.job.form.label.status = ¿Publicado?
-
+authenticated.job.form.label.employer = Empleado
 authenticated.job.form.label.accept = Acepto que mi oferta una vez creada no podra ser ni eliminada ni modificada
 authenticated.job.form.label.unique = El ticker debe ser unico
 authenticated.job.form.label.reward.error = La recompensa debe estar en EUR

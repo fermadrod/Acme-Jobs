@@ -10,13 +10,13 @@
 	<acme:form-textarea code="worker.application.form.label.qualifications" path="qualifications"/>
 	<acme:form-textarea code="worker.application.form.label.statements" path="statements"/>
 	<acme:form-textbox code="worker.application.form.label.status" path="status"/>
-	<div>
-	<label><acme:message code="worker.application.form.label.worker"/></label><br>
-	<a class="form-control"> <jstl:out value="${worker.userAccount.username}"/></a>
+	<div class="form-group" >
+	<label><acme:message code="worker.application.form.label.worker"/></label>
+	<input readonly="readonly" type="text" class="form-control" value="${worker.userAccount.username}"> 
 	</div>
-	<div>
-	<label><acme:message code="worker.application.form.label.job"/></label><br>
-	<a class="form-control"> <jstl:out value="${job.title}"/></a>
+	<div class="form-group" >
+	<label><acme:message code="worker.application.form.label.job"/></label>
+	<input readonly="readonly" type="text" class="form-control" value="${job.title}"> 
 	</div>
 	<acme:form-return code="worker.application.form.button.return"/>
 </acme:form>

@@ -105,6 +105,67 @@
 	<bean name="employer2Autenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="employer2UserAccount" />
 	</bean>
+	
+	<!-- Workers -->
+	
+	<bean name="worker1UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="worker1" />
+		<property name="password" value="worker1" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Worker" />
+				<property name="surname" value="One" />
+				<property name="email" value="worker1@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="worker1Worker" />
+				<ref bean="worker1Autenticated" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="worker1Worker" class="acme.entities.roles.Worker">
+		<property name="userAccount" ref="worker1UserAccount" />
+		<property name="qualificationsRecord" value="ESO y Bachillerato." />
+		<property name="skillsRecord" value="Se me da bien reparar cosas." />
+	</bean>
+	
+	<bean name="worker1Autenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="worker1UserAccount" />
+	</bean>
+	
+	<bean name="worker2UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="worker2" />
+		<property name="password" value="worker2" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Worker2" />
+				<property name="surname" value="Two" />
+				<property name="email" value="worker2@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="worker2Worker" />
+				<ref bean="worker2Autenticated" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="worker2Worker" class="acme.entities.roles.Worker">
+		<property name="userAccount" ref="worker2UserAccount" />
+		<property name="qualificationsRecord" value="Grado universitario y Master" />
+		<property name="skillsRecord" value="Servir hamburguesas" />
+	</bean>
+	
+	<bean name="worker2Autenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="worker2UserAccount" />
+	</bean>
+	
 	<!-- AUDITORS -->
 	<bean name="auditor1UserAccount" class="acme.framework.entities.UserAccount">
 		<property name="username" value="auditor1" />
@@ -289,6 +350,48 @@
 	<property name="goalGold" value="Be a member for over a year!" />
 	<property name="rewardGold" value="Free premium" />
 </bean>
+	
+	<!-- APPLICATIONS -->
+	<bean id="Application01" class="acme.entities.application.Application">
+		<property name="reference" value="EMPA-JOBA:ABCD"/>
+		<property name="creationMoment" value="2018/12/05 00:00"/>
+		<property name="status" value="PENDING"/>
+		<property name="statement" value="Me se da bien cargar cajas."/>
+		<property name="skills" value="Dominios básicos del cargado de cajas a hombros."/>
+		<property name="qualifications" value="Grado en ingeniería y C1 en ingles."/>
+		<property name="worker" ref="worker1Worker"/>
+		<property name="job" ref="Job04"/>
+	</bean>
+	<bean id="Application02" class="acme.entities.application.Application">
+		<property name="reference" value="EMPA-JOBB:EFGH"/>
+		<property name="creationMoment" value="2019/11/06 13:00"/>
+		<property name="status" value="PENDING"/>
+		<property name="statement" value="Texto 1."/>
+		<property name="skills" value="Texto2."/>
+		<property name="qualifications" value="Texto3"/>
+		<property name="worker" ref="worker2Worker"/>
+		<property name="job" ref="Job01"/>
+	</bean>
+	<bean id="Application03" class="acme.entities.application.Application">
+		<property name="reference" value="EMPA-JOBC:IJKL"/>
+		<property name="creationMoment" value="2019/01/04 16:00"/>
+		<property name="status" value="ACCEPTED"/>
+		<property name="statement" value="Texto 1."/>
+		<property name="skills" value="Texto2."/>
+		<property name="qualifications" value="Texto3"/>
+		<property name="worker" ref="worker2Worker"/>
+		<property name="job" ref="Job02"/>
+	</bean>
+	<bean id="Application04" class="acme.entities.application.Application">
+		<property name="reference" value="EMPA-JOBD:MNÑO"/>
+		<property name="creationMoment" value="2019/07/07 13:30"/>
+		<property name="status" value="REJECTED"/>
+		<property name="statement" value="Statement"/>
+		<property name="skills" value="Habilidades"/>
+		<property name="qualifications" value="Cualificaciones"/>
+		<property name="worker" ref="worker2Worker"/>
+		<property name="job" ref="Job03"/>
+	</bean>
 	
 	<!-- RECORDS -->
 	<bean id="Record01" class="acme.entities.records.Records">

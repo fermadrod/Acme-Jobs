@@ -11,7 +11,7 @@
         `version` integer not null,
         `moment` datetime(6),
         `more_info` varchar(255),
-        `text` varchar(255),
+        `text` varchar(1024),
         `title` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
@@ -27,10 +27,10 @@
        `id` integer not null,
         `version` integer not null,
         `moment` datetime(6),
-        `qualifications` varchar(255),
+        `qualifications` varchar(1024),
         `reference` varchar(255),
-        `skills` varchar(255),
-        `statements` varchar(255),
+        `skills` varchar(1024),
+        `statements` varchar(1024),
         `status` varchar(255),
         `job_id` integer not null,
         `worker_id` integer not null,
@@ -49,7 +49,7 @@
     create table `auditor_record` (
        `id` integer not null,
         `version` integer not null,
-        `body` varchar(255),
+        `body` varchar(1024),
         `moment` datetime(6),
         `status` bit,
         `title` varchar(255),
@@ -69,7 +69,7 @@
        `id` integer not null,
         `version` integer not null,
         `deadline` datetime(6),
-        `description` varchar(255),
+        `description` varchar(1024),
         `goal_bronze` varchar(255),
         `goal_gold` varchar(255),
         `goal_silver` varchar(255),
@@ -114,7 +114,7 @@
     create table `descriptor` (
        `id` integer not null,
         `version` integer not null,
-        `description` varchar(255),
+        `description` varchar(1024),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -126,7 +126,7 @@
     create table `duty` (
        `id` integer not null,
         `version` integer not null,
-        `description` varchar(255),
+        `description` varchar(1024),
         `percentaje` double precision,
         `title` varchar(255),
         primary key (`id`)
@@ -211,7 +211,7 @@
         `moment` datetime(6),
         `reward_amount` double precision,
         `reward_currency` varchar(255),
-        `text` varchar(255),
+        `text` varchar(1024),
         `ticker` varchar(255),
         `title` varchar(255),
         primary key (`id`)
@@ -230,7 +230,7 @@
        `id` integer not null,
         `version` integer not null,
         `ceo` varchar(255),
-        `description` varchar(255),
+        `description` varchar(1024),
         `incorporated` bit,
         `mail` varchar(255),
         `name` varchar(255),

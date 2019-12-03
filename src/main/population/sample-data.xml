@@ -545,6 +545,19 @@
 		</property>
 		<property name="user" ref="administratorAuthenticated"/>
 	</bean>
+	<bean id="Message06" class="acme.entities.messageThread.Message">
+		<property name="title" value="Hola a todos"/>
+		<property name="body" value="Este mensaje es solo para saludaros"/>
+		<property name="moment" value="2019/09/07 11:30"/>
+		<property name="tags">
+			<list>
+				<value>Menssage</value>
+				<value>Hola</value>
+				<value>Saludo</value>
+			</list>
+		</property>
+		<property name="user" ref="employer1Autenticated"/>
+	</bean>
 	 <!-- MessageThreads -->
 	 <bean id="MessageThread01" class="acme.entities.messageThread.MessageThread">
 		<property name="title" value="Hilo de mensajes"/>
@@ -572,6 +585,7 @@
 		<property name="moment" value="2019/09/03 09:30"/>
 		<property name="messages">
 			<list>
+				<ref bean="Message06" />
 			</list>
 		</property>
 	</bean>
@@ -587,6 +601,26 @@
 	<bean id="UsersInvolved03" class="acme.entities.messageThread.UserInvolved">
 		<property name="messageThread" ref="MessageThread03"/>
 		<property name="user" ref="administratorAuthenticated"/>
+	</bean>
+	<bean id="UsersInvolved04" class="acme.entities.messageThread.UserInvolved">
+		<property name="messageThread" ref="MessageThread03"/>
+		<property name="user" ref="auditor2Autenticated"/>
+	</bean>
+	<bean id="UsersInvolved05" class="acme.entities.messageThread.UserInvolved">
+		<property name="messageThread" ref="MessageThread03"/>
+		<property name="user" ref="auditor1Autenticated"/>
+	</bean>
+	<bean id="UsersInvolved06" class="acme.entities.messageThread.UserInvolved">
+		<property name="messageThread" ref="MessageThread03"/>
+		<property name="user" ref="employer1Autenticated"/>
+	</bean>
+	<bean id="UsersInvolved07" class="acme.entities.messageThread.UserInvolved">
+		<property name="messageThread" ref="MessageThread03"/>
+		<property name="user" ref="employer2Autenticated"/>
+	</bean>
+	<bean id="UsersInvolved08" class="acme.entities.messageThread.UserInvolved">
+		<property name="messageThread" ref="MessageThread03"/>
+		<property name="user" ref="worker1Autenticated"/>
 	</bean>
 	 <!-- Jobs -->
 	 <bean id="Job01" class="acme.entities.jobs.Job">
@@ -639,6 +673,16 @@
 		<property name="employer" ref="employer2Employer"/>
 		<property name="descriptor" ref="Descriptor05"/>
 	</bean>
+	<bean id="Job06" class="acme.entities.jobs.Job">
+		<property name="title" value="Titulo06"/>
+		<property name="reference" value="EMPA-JOBX"/>
+		<property name="deadline" value="2020/12/12 10:10"/>
+		<property name="moreInfo" value="http://acme.com"/>
+		<property name="status" value="false"/>
+		<property name="salary" value="EUR 5000.0"/>
+		<property name="employer" ref="employer1Employer"/>
+		<property name="descriptor" ref="Descriptor06"/>
+	</bean>
 		<!-- Dutys -->
 	<bean id="Duty01" class="acme.entities.dutys.Duty">
 		<property name="title" value="Titulo01"/>
@@ -681,6 +725,16 @@
 		<property name="description" value="Description07"/>
 		<property name="percentaje" value="2.5"/>
 	</bean>
+	<bean id="Duty08" class="acme.entities.dutys.Duty">
+		<property name="title" value="Titulo08"/>
+		<property name="description" value="Description08"/>
+		<property name="percentaje" value="20.5"/>
+	</bean>
+	<bean id="Duty09" class="acme.entities.dutys.Duty">
+		<property name="title" value="Titulo09"/>
+		<property name="description" value="Description09"/>
+		<property name="percentaje" value="50.5"/>
+	</bean>
 	 <!-- Descriptor -->
 	<bean id="Descriptor01" class="acme.entities.descriptor.Descriptor">
 		<property name="description" value="Description01"/>
@@ -721,6 +775,15 @@
 		<property name="dutys">
 			<list>
 				<ref bean="Duty07" />
+			</list>
+		</property>
+	</bean>
+	<bean id="Descriptor06" class="acme.entities.descriptor.Descriptor">
+		<property name="description" value="Description06"/>
+		<property name="dutys">
+			<list>
+				<ref bean="Duty08" />
+				<ref bean="Duty09" />
 			</list>
 		</property>
 	</bean>

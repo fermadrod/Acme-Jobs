@@ -13,7 +13,7 @@ auditor.job.form.label.reference = Reference number
 auditor.job.form.label.moreInfo = More info
 auditor.job.form.label.status = ¿Published?
 
-
+auditor.job.form.label.employer = Employer
 auditor.job.form.button.descriptor = See the descriptor
 auditor.job.form.label.accept = I accept that my job once created cannot be deleted or modified
 auditor.job.form.label.unique = Ticker must be unique

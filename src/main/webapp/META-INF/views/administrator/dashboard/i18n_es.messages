@@ -23,4 +23,10 @@ administrator.dashboard.form.label.desvRewardRequest = Desviacion estandar de la
 administrator.dashboard.form.label.investorGroupBySector = Registros de inversion agrupados por sector
 administrator.dashboard.form.label.companyGroupBySector = Registros de compañias agrupados por sector
 
+administrator.dashboard.form.label.ratioJobGroupbyStatus = Ratio de trabajos agrupados por estado
+administrator.dashboard.form.label.ratioAppGroupbyStatus = Ratio de solicitudes agrupadas por estado
+administrator.dashboard.form.label.avgNumApplPerWorker = Media de solicitudes por trabajador
+administrator.dashboard.form.label.avgNumApplPerEmmployer = Media de solicitudes por empleado
+administrator.dashboard.form.label.avgNumJobsPerEmmployer = Media de trabajos por empleado
+
 administrator.dashboard.form.button.return = Volver

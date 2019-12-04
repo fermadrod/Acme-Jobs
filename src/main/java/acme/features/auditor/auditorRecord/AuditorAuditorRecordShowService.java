@@ -32,7 +32,7 @@ public class AuditorAuditorRecordShowService implements AbstractShowService<Audi
 		auditorRecord = this.repository.findOneById(auditorRecordId);
 		auditor = auditorRecord.getAuditor();
 		principal = request.getPrincipal();
-		result = auditorRecord.getStatus() || !auditorRecord.getStatus() && auditor.getUserAccount().getId() == principal.getActiveRoleId();
+		result = auditorRecord.getStatus() || !auditorRecord.getStatus() && auditor.getId() == principal.getActiveRoleId();
 		return result;
 	}
 

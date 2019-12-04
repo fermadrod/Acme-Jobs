@@ -30,10 +30,10 @@ public class SponsorNonCommercialBannerUpdateService implements AbstractUpdateSe
 		Principal pricipal;
 
 		sponsorID = request.getModel().getInteger("id");
-		sponsor = this.repository.findSponsorById(sponsorID);
+		sponsor = this.repository.findSponsorByNonCommercialBannerId(sponsorID);
 
 		pricipal = request.getPrincipal();
-		result = sponsor.getUserAccount().getId() == pricipal.getActiveRoleId();
+		result = sponsor.getId() == pricipal.getActiveRoleId();
 		return result;
 	}
 

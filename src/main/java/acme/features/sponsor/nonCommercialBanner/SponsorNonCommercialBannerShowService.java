@@ -30,10 +30,11 @@ public class SponsorNonCommercialBannerShowService implements AbstractShowServic
 		Principal pricipal;
 
 		sponsorID = request.getModel().getInteger("id");
-		sponsor = this.repository.findSponsorById(sponsorID);
+		sponsor = this.repository.findSponsorByNonCommercialBannerId(sponsorID);
 
 		pricipal = request.getPrincipal();
-		return sponsorID == pricipal.getActiveRoleId();
+		result = sponsor.getId() == pricipal.getActiveRoleId();
+		return result;
 
 	}
 

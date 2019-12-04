@@ -31,10 +31,11 @@ public class SponsorCommercialBannerShowService implements AbstractShowService<S
 		Principal pricipal;
 
 		sponsorID = request.getModel().getInteger("id");
-		sponsor = this.repository.findSponsorById(sponsorID);
+		sponsor = this.repository.findSponsorByCommercialBannerId(sponsorID);
 
 		pricipal = request.getPrincipal();
-		return sponsorID == pricipal.getActiveRoleId();
+		result = sponsor.getId() == pricipal.getActiveRoleId();
+		return result;
 
 	}
 

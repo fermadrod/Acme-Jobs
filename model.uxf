@@ -430,69 +430,37 @@ CompanyRecord
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1120</x>
-      <y>196</y>
-      <w>182</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
-Banner
---
-+ picture: String {NotBlank, URL}
-+ slogan: String {NotBlank}
-+ url: String {NotBlank, URL}</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1085</x>
-      <y>378</y>
-      <w>147</w>
-      <h>49</h>
+      <x>1064</x>
+      <y>182</y>
+      <w>161</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 NonCommercialBanner
 --
++ picture: String {NotBlank, URL}
++ slogan: String {NotBlank}
++ url: String {NotBlank, URL}
 + jingle: String {}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1253</x>
-      <y>378</y>
-      <w>231</w>
-      <h>49</h>
+      <x>1029</x>
+      <y>280</y>
+      <w>238</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 CommercialBanner
 --
++ picture: String {NotBlank, URL}
++ slogan: String {NotBlank}
++ url: String {NotBlank, URL}
 + card: String {NotBlank, cardNumber}
 </panel_attributes>
     <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1148</x>
-      <y>259</y>
-      <w>77</w>
-      <h>133</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>90.0;10.0;10.0;170.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1204</x>
-      <y>259</y>
-      <w>140</w>
-      <h>133</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;180.0;170.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -685,8 +653,8 @@ Application
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>903</x>
-      <y>322</y>
+      <x>609</x>
+      <y>602</y>
       <w>154</w>
       <h>77</h>
     </coordinates>
@@ -920,14 +888,14 @@ Sponsor
     <coordinates>
       <x>959</x>
       <y>203</y>
-      <w>175</w>
-      <h>42</h>
+      <w>119</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=x-&gt;
 m1=0..*
 m2=1
 creates &gt;</panel_attributes>
-    <additional_attributes>230.0;30.0;10.0;20.0</additional_attributes>
+    <additional_attributes>150.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -942,5 +910,19 @@ m1=0..*
 m2=1
 has &gt;</panel_attributes>
     <additional_attributes>990.0;260.0;990.0;20.0;100.0;20.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>910</x>
+      <y>238</y>
+      <w>133</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=x-&gt;
+m1=0..*
+m2=1
+creates &gt;</panel_attributes>
+    <additional_attributes>170.0;130.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>

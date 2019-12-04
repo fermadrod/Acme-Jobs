@@ -7,6 +7,26 @@
        drop 
        foreign key FK_6lnbc6fo3om54vugoh8icg78m;
 
+    alter table `application` 
+       drop 
+       foreign key `FKoa6p4s2oyy7tf80xwc4r04vh6`;
+
+    alter table `application` 
+       drop 
+       foreign key `FKmbjdoxi3o93agxosoate4sxbt`;
+
+    alter table `auditor` 
+       drop 
+       foreign key FK_clqcq9lyspxdxcp6o4f3vkelj;
+
+    alter table `auditor_record` 
+       drop 
+       foreign key `FKjx5w0xtdjllmdj2el2rlx4wdj`;
+
+    alter table `auditor_record` 
+       drop 
+       foreign key `FKcpwoo69w5dhtr8nvg0xhl9qv9`;
+
     alter table `authenticated` 
        drop 
        foreign key FK_h52w0f3wjoi68b63wv9vwon57;
@@ -23,9 +43,21 @@
        drop 
        foreign key `FKhcqquyqtys40tece78apjsbyt`;
 
+    alter table `descriptor_duty` 
+       drop 
+       foreign key `FKkm3m3388tiixfsn63295m8n13`;
+
+    alter table `descriptor_duty` 
+       drop 
+       foreign key `FKqitedkrksd2w8qyp1fp5eao9f`;
+
     alter table `employer` 
        drop 
        foreign key FK_na4dfobmeuxkwf6p75abmb2tr;
+
+    alter table `job` 
+       drop 
+       foreign key `FKfqwyynnbcsq0htxho3vchpd2u`;
 
     alter table `job` 
        drop 
@@ -67,11 +99,21 @@
        drop 
        foreign key `FKn5kf90daeyb1rcq0soeax5tx3`;
 
+    alter table `worker` 
+       drop 
+       foreign key FK_l5q1f33vs2drypmbdhpdgwfv3;
+
     drop table if exists `administrator`;
 
     drop table if exists `announcement`;
 
     drop table if exists `anonymous`;
+
+    drop table if exists `application`;
+
+    drop table if exists `auditor`;
+
+    drop table if exists `auditor_record`;
 
     drop table if exists `authenticated`;
 
@@ -84,6 +126,12 @@
     drop table if exists `customization_parameters`;
 
     drop table if exists `customization_parameters_spam_words`;
+
+    drop table if exists `descriptor`;
+
+    drop table if exists `descriptor_duty`;
+
+    drop table if exists `duty`;
 
     drop table if exists `employer`;
 
@@ -114,5 +162,7 @@
     drop table if exists `user_account`;
 
     drop table if exists `user_involved`;
+
+    drop table if exists `worker`;
 
     drop table if exists `hibernate_sequence`;

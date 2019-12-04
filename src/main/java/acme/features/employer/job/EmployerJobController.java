@@ -21,7 +21,7 @@ public class EmployerJobController extends AbstractController<Employer, Job> {
 	@Autowired
 	EmployerJobListMineService	listMineService;
 	@Autowired
-	EmployerJobShowService		showService;
+	EmployerJobShowService	showService;
 
 
 	//Constructors

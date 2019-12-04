@@ -1,6 +1,7 @@
 
 package acme.entities.records;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -34,6 +35,7 @@ public class Records extends DomainEntity {
 	private String				ceo;
 
 	@NotBlank
+	@Column(length = 1024)
 	private String				description;
 
 	@NotBlank

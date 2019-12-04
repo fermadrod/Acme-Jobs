@@ -27,6 +27,14 @@ master.menu.sign-out = Salir
 master.menu.authenticated.challenges = Retos
 master.menu.isAutentificated= Usuario autentificado
 
+
+# master.menu.sponsor #################################################################
+master.menu.sponsor = Sponsor
+master.menu.sponsor.commercialBanner.create = Crear banners comerciales
+master.menu.sponsor.commercialBanner = Listar banners comerciales
+master.menu.sponsor.nonCommercialBanner.create = Crear banners no comerciales
+master.menu.sponsor.nonCommercialBanner = Listar banners no comerciales
+
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
@@ -39,16 +47,23 @@ master.menu.anonymous.investorRecordStars = Lista de registros de inversion con 
 
 # master.menu.employer #################################################################
 
+master.menu.employer = Empleado
+master.menu.employer.job.listmine = Listar mis trabajos
+
+# master.menu.worker #################################################################
+
+master.menu.worker = Trabajador
+master.menu.worker.aplication.listmine = Listar mis solicitudes
+
+# master.menu.auditor #################################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.job.listother = Listar trabajos con mis registros de auditor
+master.menu.auditor.job.listmine = Listar trabajos sin mis registros de auditor
+master.menu.auditor.auditorRecord.list = Listar mis registros de auditor
 master.menu.employer = Employer
-master.menu.employer.job.listmine = List my jobs
+master.menu.employer.job.listmine = Listar mis trabajos
 
-
-# master.menu.sponsor #################################################################
-master.menu.sponsor = Sponsor
-master.menu.sponsor.commercialBanner.create = Crear banners comerciales
-master.menu.sponsor.commercialBanner = Listar banners comerciales
-master.menu.sponsor.nonCommercialBanner.create = Crear banners no comerciales
-master.menu.sponsor.nonCommercialBanner = Listar banners no comerciales
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
@@ -101,6 +116,7 @@ master.menu.user-account.offer = Lista de ofertas
 master.menu.user-account.records = Registros de la compañia
 master.menu.user-account.investorRecord = Lista de registros de inversion
 master.menu.user-account.request = Lista de peticiones
+master.menu.user-account.job.list = Listar los trabajos
 
 # master.footer ###############################################################
 

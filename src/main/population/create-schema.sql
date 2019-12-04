@@ -11,7 +11,7 @@
         `version` integer not null,
         `moment` datetime(6),
         `more_info` varchar(255),
-        `text` varchar(255),
+        `text` varchar(1024),
         `title` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
@@ -20,6 +20,41 @@
        `id` integer not null,
         `version` integer not null,
         `user_account_id` integer,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `application` (
+       `id` integer not null,
+        `version` integer not null,
+        `moment` datetime(6),
+        `qualifications` varchar(1024),
+        `reference` varchar(255),
+        `skills` varchar(1024),
+        `statements` varchar(1024),
+        `status` varchar(255),
+        `job_id` integer not null,
+        `worker_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `auditor` (
+       `id` integer not null,
+        `version` integer not null,
+        `user_account_id` integer,
+        `firm` varchar(255),
+        `responsibility_statement` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `auditor_record` (
+       `id` integer not null,
+        `version` integer not null,
+        `body` varchar(1024),
+        `moment` datetime(6),
+        `status` bit,
+        `title` varchar(255),
+        `auditor_id` integer not null,
+        `job_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -34,7 +69,7 @@
        `id` integer not null,
         `version` integer not null,
         `deadline` datetime(6),
-        `description` varchar(255),
+        `description` varchar(1024),
         `goal_bronze` varchar(255),
         `goal_gold` varchar(255),
         `goal_silver` varchar(255),
@@ -77,6 +112,27 @@
         `spam_words` varchar(255)
     ) engine=InnoDB;
 
+    create table `descriptor` (
+       `id` integer not null,
+        `version` integer not null,
+        `description` varchar(1024),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `descriptor_duty` (
+       `descriptor_id` integer not null,
+        `dutys_id` integer not null
+    ) engine=InnoDB;
+
+    create table `duty` (
+       `id` integer not null,
+        `version` integer not null,
+        `description` varchar(1024),
+        `percentaje` double precision,
+        `title` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `employer` (
        `id` integer not null,
         `version` integer not null,
@@ -106,6 +162,7 @@
         `salary_currency` varchar(255),
         `status` bit,
         `title` varchar(255),
+        `descriptor_id` integer not null,
         `employer_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
@@ -156,7 +213,7 @@
         `moment` datetime(6),
         `reward_amount` double precision,
         `reward_currency` varchar(255),
-        `text` varchar(255),
+        `text` varchar(1024),
         `ticker` varchar(255),
         `title` varchar(255),
         primary key (`id`)
@@ -175,7 +232,7 @@
        `id` integer not null,
         `version` integer not null,
         `ceo` varchar(255),
-        `description` varchar(255),
+        `description` varchar(1024),
         `incorporated` bit,
         `mail` varchar(255),
         `name` varchar(255),
@@ -228,11 +285,26 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `worker` (
+       `id` integer not null,
+        `version` integer not null,
+        `user_account_id` integer,
+        `qualifications_record` varchar(255),
+        `skills_record` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `hibernate_sequence` (
        `next_val` bigint
     ) engine=InnoDB;
 
     insert into `hibernate_sequence` values ( 1 );
+
+    alter table `application` 
+       add constraint UK_ct7r18vvxl5g4c4k7aefpa4do unique (`reference`);
+
+    alter table `descriptor_duty` 
+       add constraint UK_gicb7at1idsamnu3xgj4i91vc unique (`dutys_id`);
 
     alter table `job` 
        add constraint UK_7jmfdvs0b0jx7i33qxgv22h7b unique (`reference`);
@@ -259,6 +331,31 @@
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
+    alter table `application` 
+       add constraint `FKoa6p4s2oyy7tf80xwc4r04vh6` 
+       foreign key (`job_id`) 
+       references `job` (`id`);
+
+    alter table `application` 
+       add constraint `FKmbjdoxi3o93agxosoate4sxbt` 
+       foreign key (`worker_id`) 
+       references `worker` (`id`);
+
+    alter table `auditor` 
+       add constraint FK_clqcq9lyspxdxcp6o4f3vkelj 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);
+
+    alter table `auditor_record` 
+       add constraint `FKjx5w0xtdjllmdj2el2rlx4wdj` 
+       foreign key (`auditor_id`) 
+       references `auditor` (`id`);
+
+    alter table `auditor_record` 
+       add constraint `FKcpwoo69w5dhtr8nvg0xhl9qv9` 
+       foreign key (`job_id`) 
+       references `job` (`id`);
+
     alter table `authenticated` 
        add constraint FK_h52w0f3wjoi68b63wv9vwon57 
        foreign key (`user_account_id`) 
@@ -279,10 +376,25 @@
        foreign key (`customization_parameters_id`) 
        references `customization_parameters` (`id`);
 
+    alter table `descriptor_duty` 
+       add constraint `FKkm3m3388tiixfsn63295m8n13` 
+       foreign key (`dutys_id`) 
+       references `duty` (`id`);
+
+    alter table `descriptor_duty` 
+       add constraint `FKqitedkrksd2w8qyp1fp5eao9f` 
+       foreign key (`descriptor_id`) 
+       references `descriptor` (`id`);
+
     alter table `employer` 
        add constraint FK_na4dfobmeuxkwf6p75abmb2tr 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `job` 
+       add constraint `FKfqwyynnbcsq0htxho3vchpd2u` 
+       foreign key (`descriptor_id`) 
+       references `descriptor` (`id`);
 
     alter table `job` 
        add constraint `FK3rxjf8uh6fh2u990pe8i2at0e` 
@@ -333,3 +445,8 @@
        add constraint `FKn5kf90daeyb1rcq0soeax5tx3` 
        foreign key (`user_id`) 
        references `authenticated` (`id`);
+
+    alter table `worker` 
+       add constraint FK_l5q1f33vs2drypmbdhpdgwfv3 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);

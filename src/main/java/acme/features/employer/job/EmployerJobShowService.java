@@ -27,13 +27,13 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 		int jobId;
 		Job job;
 		Employer employer;
-		Principal pricipal;
+		Principal principal;
 
 		jobId = request.getModel().getInteger("id");
 		job = this.repository.findOneById(jobId);
 		employer = job.getEmployer();
-		pricipal = request.getPrincipal();
-		result = job.getStatus() || !job.getStatus() && employer.getUserAccount().getId() == pricipal.getActiveRoleId();
+		principal = request.getPrincipal();
+		result = job.getStatus() || !job.getStatus() && employer.getUserAccount().getId() == principal.getActiveRoleId();
 		return result;
 	}
 
@@ -44,7 +44,7 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 		assert model != null;
 
 		request.unbind(entity, model, "reference", "title", "deadline");
-		request.unbind(entity, model, "salary", "moreInfo", "status");
+		request.unbind(entity, model, "salary", "moreInfo", "status", "employer");
 
 	}
 

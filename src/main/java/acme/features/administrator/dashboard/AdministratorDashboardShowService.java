@@ -36,7 +36,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert model != null;
 
 		request.unbind(entity, model, "numberAnnouncement", "numberCompanyRecord", "numberInvestorRecord", "minRewardRequest", "maxRewardRequest", "avgRewardRequest", "desvRewardRequest", "minRewardOffer", "maxRewardOffer", "avgRewardOffer",
-			"desvRewardOffer", "investorGroupBySector", "companyGroupBySector");
+			"desvRewardOffer", "investorGroupBySector", "companyGroupBySector", "avgNumJobsPerEmmployer", "avgNumApplPerEmmployer", "avgNumApplPerWorker", "ratioJobGroupbyStatus", "ratioAppGroupbyStatus");
 
 	}
 
@@ -70,6 +70,24 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 
 		result.setInvestorGroupBySector(investorGroupBySector);
 		result.setCompanyGroupBySector(companyGroupBySector);
+
+		/////////////////////D04///////////////////////////
+		result.setAvgNumJobsPerEmmployer(this.repository.findAvgNumJobPerEmmployer());
+		result.setAvgNumApplPerEmmployer(this.repository.findAvgNumApplPerEmmployer());
+		result.setAvgNumApplPerWorker(this.repository.findAvgNumApplPerWorker());
+
+		Map<Boolean, Integer> ratioJobGroupbyStatus = new HashMap<Boolean, Integer>();
+		Map<String, Integer> ratioAppGroupbyStatus = new HashMap<String, Integer>();
+		Object[][] ratioJobs = this.repository.findRatioJobGroupbyStatus();
+		Object[][] ratioApps = this.repository.findRatioAppGroupbyStatus();
+		for (Object[] obj : ratioJobs) {
+			ratioJobGroupbyStatus.put(new Boolean(obj[0].toString()), new Integer(obj[1].toString()));
+		}
+		for (Object[] obj : ratioApps) {
+			ratioAppGroupbyStatus.put(obj[0].toString(), new Integer(obj[1].toString()));
+		}
+		result.setRatioJobGroupbyStatus(ratioJobGroupbyStatus);
+		result.setRatioAppGroupbyStatus(ratioAppGroupbyStatus);
 		return result;
 	}
 

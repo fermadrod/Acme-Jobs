@@ -48,6 +48,19 @@ master.menu.sponsor.commercialBanner.create = Create commercial banner
 master.menu.sponsor.commercialBanner = List commercial banners
 master.menu.sponsor.nonCommercialBanner.create = Create non commercial banner
 master.menu.sponsor.nonCommercialBanner = List non commercial banners
+
+# master.menu.worker #################################################################
+
+master.menu.worker = Worker
+master.menu.worker.aplication.listmine = List my applications
+
+# master.menu.auditor #################################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.job.listother = List jobs with my auditor record
+master.menu.auditor.job.listmine = List jobs without my auditor record
+master.menu.auditor.auditorRecord.list = List my auditor records
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
@@ -103,6 +116,7 @@ master.menu.user-account.offer = List offers
 master.menu.user-account.records = Company records
 master.menu.user-account.investorRecord = List Investor Records
 master.menu.user-account.request = List requests
+master.menu.user-account.job.list = List jobs
 
 # master.footer ###############################################################
 

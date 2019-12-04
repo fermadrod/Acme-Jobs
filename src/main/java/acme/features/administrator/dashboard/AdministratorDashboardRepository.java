@@ -35,7 +35,7 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 
 	@Query("select avg(r.reward.amount) from Offer r")
 	Double findAvgRewardOffer();
-	////////////////////////////////////////////////////////////
+
 	@Query("select sqrt(sum(r.reward.amount*r.reward.amount)/count(r)-(avg(r.reward.amount)*avg(r.reward.amount))) from Offer r")
 	Double findDesvRewardOffer();
 
@@ -47,4 +47,21 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 
 	@Query("select i.sector,count(i) from Records i group by i.sector")
 	Object[][] findCompanyGroupBySector();
+
+	//////////////////////////D04//////////////////////////////////
+
+	@Query("select avg(select count(j) from Job j where j.employer.id = r.id) from Employer r")
+	Double findAvgNumJobPerEmmployer();
+
+	@Query("select avg(select avg(select count(a) from Application a where a.job.id = j.id) from Job j where j.employer.id = r.id) from Employer r")
+	Double findAvgNumApplPerEmmployer();
+
+	@Query("select avg(select count(a) from Application a where a.worker.id = r.id) from Worker r")
+	Double findAvgNumApplPerWorker();
+
+	@Query("select j.status,count(j) from Job j group by j.status")
+	Object[][] findRatioJobGroupbyStatus();
+
+	@Query("select a.status,count(a) from Application a group by a.status")
+	Object[][] findRatioAppGroupbyStatus();
 }

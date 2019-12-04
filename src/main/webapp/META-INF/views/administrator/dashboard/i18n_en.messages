@@ -23,4 +23,10 @@ administrator.dashboard.form.label.desvRewardRequest = Standard desviation reque
 administrator.dashboard.form.label.investorGroupBySector = Investor record group by sector
 administrator.dashboard.form.label.companyGroupBySector = Company record group by sector
 
+administrator.dashboard.form.label.ratioJobGroupbyStatus = Ratio of jobs grouped by status
+administrator.dashboard.form.label.ratioAppGroupbyStatus = Ratio of applications grouped by status
+administrator.dashboard.form.label.avgNumApplPerWorker = Average number of applications per worker
+administrator.dashboard.form.label.avgNumApplPerEmmployer = Average number of applications per employer
+administrator.dashboard.form.label.avgNumJobsPerEmmployer = Average number of jobs per employer
+
 administrator.dashboard.form.button.return = Return

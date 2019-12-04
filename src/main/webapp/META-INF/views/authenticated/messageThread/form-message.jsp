@@ -20,9 +20,10 @@
 	</jstl:forEach>
 	</tbody>
 	</table>
-	<div>
-	<label><acme:message code="authenticated.message.form.label.user"/></label><br>
-	<a class="form-control"> <jstl:out value="${user.userAccount.username}"/></a>
+	<div class="form-group" >
+	<label><acme:message code="authenticated.message.form.label.user"/></label>
+	<input readonly="readonly" type="text" class="form-control" value="${user.userAccount.username}"> 
 	</div>
-	<acme:form-return code="authenticated.messageThread.form.button.return"/><br>
+	
+	<acme:form-return code="authenticated.messageThread.form.button.return"/>
 </acme:form>

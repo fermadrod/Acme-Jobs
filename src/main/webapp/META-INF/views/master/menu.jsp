@@ -72,8 +72,18 @@
 			<acme:menu-suboption code="master.menu.sponsor.nonCommercialBanner.create" action="/sponsor/non-commercial-banner/create"/>
 			<acme:menu-suboption code="master.menu.sponsor.nonCommercialBanner" action="/sponsor/non-commercial-banner/list-mine"/>
 		</acme:menu-option>
-		
-		
+
+		<%-- COLOCAR EN ESTE MENU TODO LO QUE PUEDA VER UN WORKER --%>
+		<acme:menu-option code="master.menu.worker" access="hasRole('Worker')">
+			<acme:menu-suboption code="master.menu.worker.aplication.listmine" action="/worker/application/list-mine"/>
+		</acme:menu-option>
+		<%-- COLOCAR EN ESTE MENU TODO LO QUE PUEDA VER UN AUDITOR --%>
+		<acme:menu-option code="master.menu.auditor" access="hasRole('Auditor')">
+			<acme:menu-suboption code="master.menu.auditor.auditorRecord.list" action="/auditor/auditor-record/list-mine"/>
+			<acme:menu-suboption code="master.menu.auditor.job.listmine" action="/auditor/job/list?mode=mine"/>
+			<acme:menu-suboption code="master.menu.auditor.job.listother" action="/auditor/job/list?mode=other"/>
+		</acme:menu-option>
+
 		<%-- COLOCAR EN ESTE MENU TODO LO QUE PUEDA VER UN USUARIO AUTENTIFICADO --%>
 		<acme:menu-option code="master.menu.isAutentificated" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.user-account.announcement" action="/authenticated/announcement/list"/>
@@ -82,6 +92,7 @@
 			<acme:menu-suboption code="master.menu.user-account.records" action="/authenticated/records/list"/>
 			<acme:menu-suboption code="master.menu.user-account.investorRecord" action="/authenticated/investor-record/list"/>
 			<acme:menu-suboption code="master.menu.user-account.request" action="/authenticated/request/list"/>
+			<acme:menu-suboption code="master.menu.user-account.job.list" action="/authenticated/job/list"/>
 			<acme:menu-suboption code="master.menu.user-account.messageThreads" action="/authenticated/message-thread/list"/>
 		</acme:menu-option>
 	</acme:menu-left>

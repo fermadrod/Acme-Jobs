@@ -15,7 +15,6 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
-import org.springframework.lang.NonNull;
 
 import acme.entities.descriptor.Descriptor;
 import acme.entities.roles.Employer;
@@ -54,7 +53,7 @@ public class Job extends DomainEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				deadline;
 
-	@NonNull
+	@NotNull
 	private Money				salary;
 
 	//Relationships-----------------------------------

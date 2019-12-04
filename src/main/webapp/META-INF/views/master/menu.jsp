@@ -63,6 +63,16 @@
 		<acme:menu-option code="master.menu.employer" access="hasRole('Employer')">
 			<acme:menu-suboption code="master.menu.employer.job.listmine" action="/employer/job/list-mine"/>
 		</acme:menu-option>
+		
+		<%-- COLOCAR EN ESTE MENU TODO LO QUE PUEDA VER UN SPONSOR --%>
+		<acme:menu-option code="master.menu.sponsor" access="hasRole('Sponsor')">
+			
+			<acme:menu-suboption code="master.menu.sponsor.commercialBanner.create" action="/sponsor/commercial-banner/create"/>
+			<acme:menu-suboption code="master.menu.sponsor.commercialBanner" action="/sponsor/commercial-banner/list-mine"/>
+			<acme:menu-suboption code="master.menu.sponsor.nonCommercialBanner.create" action="/sponsor/non-commercial-banner/create"/>
+			<acme:menu-suboption code="master.menu.sponsor.nonCommercialBanner" action="/sponsor/non-commercial-banner/list-mine"/>
+		</acme:menu-option>
+
 		<%-- COLOCAR EN ESTE MENU TODO LO QUE PUEDA VER UN WORKER --%>
 		<acme:menu-option code="master.menu.worker" access="hasRole('Worker')">
 			<acme:menu-suboption code="master.menu.worker.aplication.listmine" action="/worker/application/list-mine"/>
@@ -73,6 +83,7 @@
 			<acme:menu-suboption code="master.menu.auditor.job.listmine" action="/auditor/job/list?mode=mine"/>
 			<acme:menu-suboption code="master.menu.auditor.job.listother" action="/auditor/job/list?mode=other"/>
 		</acme:menu-option>
+
 		<%-- COLOCAR EN ESTE MENU TODO LO QUE PUEDA VER UN USUARIO AUTENTIFICADO --%>
 		<acme:menu-option code="master.menu.isAutentificated" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.user-account.announcement" action="/authenticated/announcement/list"/>

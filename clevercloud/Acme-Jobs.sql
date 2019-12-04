@@ -391,7 +391,7 @@ CREATE TABLE `commercial_banner` (
 
 LOCK TABLES `commercial_banner` WRITE;
 /*!40000 ALTER TABLE `commercial_banner` DISABLE KEYS */;
-INSERT INTO `commercial_banner` VALUES (1564,1,'1111111111111111','https://www.ofrendavirgendelpilar.com/wp-content/uploads/2018/09/rosa-roja-ofrenda.jpg','Flowers','https://www.flores.come',1522);
+INSERT INTO `commercial_banner` VALUES (1564,0,'1111111111111111','https://www.ofrendavirgendelpilar.com/wp-content/uploads/2018/09/rosa-roja-ofrenda.jpg','Flowers','https://www.flores.com',1522);
 /*!40000 ALTER TABLE `commercial_banner` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1119,7 +1119,7 @@ CREATE TABLE `user_account` (
 
 LOCK TABLES `user_account` WRITE;
 /*!40000 ALTER TABLE `user_account` DISABLE KEYS */;
-INSERT INTO `user_account` VALUES (1,0,_binary '\0','john.doe@acme.com','John','Doe','$2a$05$.bZgYTtL.22Nvh/BokABXubc0NKMn1fJ/uDAjF194bfFgemiSTmhG','anonymous'),(3,0,_binary '','administrator1@acme.com','Administrator','Acme1.com','$2a$05$WUV9Oftr5nbx5MNNZe3Ko.V6zKo81AhIMk96qj5GJxlSX2rJ.Nar2','administrator01'),(1518,0,_binary '','administrator@acme.com','Administrator','Acme.com','$2a$05$m6ePE7cXXoDJDzdRcejS/uLXHnyXRtrtBxLFi0hyEANPj2RbBFf7e','administrator'),(1521,0,_binary '','sponsor1@acme.com','Sponsor','One','$2a$05$KNP6tIrGg66vBuO7JuH1Pet502ooVeB.Bd2nTNy19TY3oTPRr6./a','sponsor1'),(1524,0,_binary '','sponsor2@acme.com','Sponsor','One','$2a$05$PT0xWE1s/TL0D10qL4cN1uzVXj8Upfn8CtXWY.JI6x2lF/ZivIjaq','sponsor2'),(1527,0,_binary '','employer1@acme.com','Employer','One','$2a$05$ygW9eBw66Qmemgdr5Y81XuYkv5Ia4.PBbLe2PR3Lhr6.x8B9lUzvG','employer1'),(1530,0,_binary '','employer2@acme.com','Employer2','Two','$2a$05$GU07o1D9WYjXA/KshodCseg.OPZBdib3Gx99qgMP6LZbjxbN5ub9i','employer2'),(1533,0,_binary '','auditor1@acme.com','auditor','One','$2a$05$l2JhSe3UXeMdjvTap9V3ReMRio5mAV6JelgeUzQUjZhjcWiOZ/NYG','auditor1'),(1536,0,_binary '','auditor2@acme.com','auditor2','One','$2a$05$SfGviTEnUQmcUYgjny5e2uvc4Zn1dYZMGX3ZyVgt.OevVUx6Pv5Li','auditor2'),(1539,0,_binary '','worker1@acme.com','worker','One','$2a$05$GleNF/OjngWqnaZrd.ifR./vGXailCWBbWesSPqFYmy/EbIi0v6NW','worker1'),(1542,0,_binary '','worker2@acme.com','worker2','One','$2a$05$go7KodKHWkJS.1YSrC2qX.q./LDJ/4Sgbl5MHVTjltZtZNIfktmNm','worker2');
+INSERT INTO `user_account` VALUES (1,0,_binary '\0','john.doe@acme.com','John','Doe','$2a$05$hQ5FihIXpXrBO4oa7H.GZ.pZJJMYR6jWmCpHZQ.AS2OX/x6kU9mmi','anonymous'),(3,0,_binary '','administrator1@acme.com','Administrator','Acme1.com','$2a$05$UmbgU7r7Ej.jAca9E2o4me9fLEmREstX1KFMw395m7p9u97KVu322','administrator01'),(1518,0,_binary '','administrator@acme.com','Administrator','Acme.com','$2a$05$YYBvA4DOnGo9RWm2GXrPqu37HqS8nNaw8W8afpjoIO0D99j/Rp7Uu','administrator'),(1521,0,_binary '','sponsor1@acme.com','Sponsor','One','$2a$05$uwLzM1A9iUNrs40mYbZ3xeV7yuexkyboDkW3LYjEW4p9Axs5UamzK','sponsor1'),(1524,0,_binary '','sponsor2@acme.com','Sponsor','One','$2a$05$f.hZV2mQCwgXUCEHLHdmUuWpQLlfed0v15p77jpKZRIjf1JO5dgQy','sponsor2'),(1527,0,_binary '','employer1@acme.com','Employer','One','$2a$05$WJNUIONiLBJnv7Nk/qiJRe7nxA1SUdQOMq3Edt1.IFHH7nz80i7rq','employer1'),(1530,0,_binary '','employer2@acme.com','Employer2','Two','$2a$05$uYi5xmALc2MSVB4FE/VTfu35HPs9MCOZGWCph8rGbe2LibbUBXxhq','employer2'),(1533,0,_binary '','auditor1@acme.com','auditor','One','$2a$05$SOoBZTWlgZOYeV32Jkwnxucld52uU0qSXRIjSiTvwnacc/S4qcaMi','auditor1'),(1536,0,_binary '','auditor2@acme.com','auditor2','One','$2a$05$dvdwtLgw2VuZkZ4U75UqVuV0x3bf/eJ6ywWbCulSWSQYDh1p9KrrS','auditor2'),(1539,0,_binary '','worker1@acme.com','worker','One','$2a$05$7CcCxvUEVPXjG1sw9G0P/eiw5X4iVlJwjF70dGrTAp5BjlWbMex3y','worker1'),(1542,0,_binary '','worker2@acme.com','worker2','One','$2a$05$faTwe/n7xSeh5Jll9hl5IuyX1nfwLeZQc8Wk7U.CJH6RXGNzLpSfa','worker2');
 /*!40000 ALTER TABLE `user_account` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1191,4 +1191,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-04 11:53:54
+-- Dump completed on 2019-12-04 12:31:58
